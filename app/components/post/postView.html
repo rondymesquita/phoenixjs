@@ -1,0 +1,37 @@
+<app-header>
+</app-header>
+<div class="container-fluid mainContent">
+
+
+    <ul ng-repeat="post in posts">
+        <li>
+            <h4>{{post.title}}</h4>
+            <p>{{post.excerpt}}</p>
+        </li>
+    </ul>
+
+
+    <div class="row hide" ng-repeat="shortcut in shortcuts">
+      <div class="col-sm-2">
+        <a href="{{shortcut.url}}" class="btn btn-primary btn-lg dashShortcut" style="min-width:100%">
+          <span class="fa fa-{{shortcut.icon}}" aria-hidden="true"></span>
+          {{shortcut.title}}
+        </a>
+      </div>
+    </div>
+
+    <div class="row hide">
+        <div class="col-sm-4">
+            <div class="list-group">
+                <a ng-repeat="shortcut in shortcuts" href="{{shortcut.url}}" class="list-group-item">
+                    <span class="fa fa-{{shortcut.icon}}" aria-hidden="true"></span>
+                    {{shortcut.title}}
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<app-footer>
+</app-footer>

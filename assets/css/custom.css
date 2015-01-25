@@ -1,0 +1,109 @@
+@font-face{
+    src: url("../fonts/Lato.ttf");
+    font-family:Lato;
+}
+@font-face{
+    src: url("../fonts/Lato-Bol.ttf");
+    font-family:Lato-Bold;
+}
+@font-face{
+    src: url("../fonts/Russo_One.ttf");
+    font-family:Russo;
+}
+body, h1,h2,h3,h4,h5,h6{
+    font-family:Lato;
+}
+
+body{
+  background:#eee;
+}
+.navbar-brand,
+.form-signin-heading{
+    font-family:Russo;
+}
+.footer{
+    margin-top:20px;
+}
+.mainContent{
+  background:#fff;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+.container-fluid{
+  max-width:1100px;
+}
+.dashShortcut{
+  /*color:red;*/
+  margin-bottom:20px;
+  border:none;
+  background:none;
+  color:#000;
+}
+.dashShortcut .glyphicon,
+.dashShortcut .fa,
+.glyphicon-block,
+.fa-block{
+  display:block !important;
+}
+.dashShortcut .glyphicon,
+.dashShortcut .fa{
+    font-size:40px;
+    border:1px solid transparent;
+}
+.toolbar{
+  /*padding:5px inherit;*/
+}
+
+/*
+    Font Awesome Custom
+*/
+.fa-spin{
+  -webkit-animation: fa-spin 0.7s infinite linear;
+}
+.fa-danger:before {
+    content: "\f06a";
+}
+.fa-info:before {
+    content: "\f05a";
+}
+.fa-warning:before {
+    content: "\f071";
+}
+.fa-success:before {
+    content: "\f058";
+}
+.fa-loading:before {
+    content: "\f110";
+}
+.fa-loading{
+-webkit-animation: fa-spin 0.7s infinite linear;
+}
+.loading{
+    background-color:#d9edf7
+}
+.text-loading{
+    color:#31708f;
+}
+.table>thead>tr>th,
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td{
+    padding: 8px !important;
+    line-height: 1.42857143;
+    vertical-align: middle !important;
+    border-top: 1px solid #ddd;
+    height:47px !important;
+}
+.modal-content{
+    background-color:#fafafa;
+}
+form{
+    margin-bottom:0 !important;
+}
+.dialogImage{
+    font-size:48px;
+    display: block;
+    text-align:center;
+}
