@@ -1,5 +1,5 @@
 angular
-.module('SmartschoolApp', ['ngRoute','ngTable'])
+.module('SmartschoolApp', ['ngRoute','ngTable','yaru22.md'])
 .run(function(){
     console.log("loaded");
 }).config(function($httpProvider){
@@ -40,7 +40,7 @@ var interceptor = function ($q, $location, constants) {
             //     $location.url('/login');
             // }
             // console.log("Error");
-            console.log(rejection);
+            // console.log(rejection);
             return $q.reject(rejection);
         }
     }

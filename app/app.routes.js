@@ -8,6 +8,15 @@ function config($routeProvider) {
         controller  : 'PostController'
     })
 
+    .when('/posts/:postID', {
+        templateUrl : function(urlattr){
+
+            console.log(urlattr.postID);
+            return './../posts/' + urlattr.postID + ".md";
+        },
+        controller  : 'PostController'
+    })
+
     .when('/disciplines', {
         templateUrl : './../discipline/disciplineView.html',
         controller  : 'DisciplineController'
