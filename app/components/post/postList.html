@@ -1,0 +1,17 @@
+<app-header>
+</app-header>
+<div class="container-fluid mainContent">
+
+
+    <ul ng-repeat="post in posts">
+        <li>
+            <h4><a href="#post/{{post.id}}">{{post.title}}</a></h4>
+            <p>{{post.excerpt}}</p>
+        </li>
+    </ul>
+
+    <!-- <md ng-include="'../../posts/1.md'"></md> -->
+
+</div>
+<app-footer>
+</app-footer>

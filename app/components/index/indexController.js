@@ -5,14 +5,5 @@ angular
 
         $scope.appName = "Smartschool";
         $scope.username = $.cookie(constants.usernameKey);
-        $scope.started = false;
-
-
-        $scope.logout = function() {
-            console.log("Sign out!")
-            $.removeCookie(constants.usernameKey);
-            $.removeCookie(constants.authTokenKey);
-            $location.url('/login');
-        }
 
 }]);

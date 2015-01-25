@@ -4,31 +4,20 @@ function config($routeProvider) {
     $routeProvider
 
     .when('/', {
-        templateUrl : './../post/postView.html',
+        templateUrl : './../post/postList.html',
         controller  : 'PostController'
     })
 
-    .when('/posts/:postID', {
+    .when('/post/:id', {
         templateUrl : function(urlattr){
-
-            console.log(urlattr.postID);
-            return './../posts/' + urlattr.postID + ".md";
+            return './../post/postView.html';
         },
         controller  : 'PostController'
     })
 
-    .when('/disciplines', {
-        templateUrl : './../discipline/disciplineView.html',
-        controller  : 'DisciplineController'
-    })
-
-    .when('/login', {
-        templateUrl : './../login/loginView.html',
-        controller  : 'LoginController'
-    })
 
     .otherwise({
-        templateUrl : './../dashboard/dashboardView.html'
+        templateUrl : './../commons/404.html'
     });
 
 }
