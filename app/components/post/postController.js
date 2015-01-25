@@ -1,5 +1,5 @@
 
-angular.module('SmartschoolApp').controller('PostController', ['$scope', 'httpClient','constants', '$http', '$routeParams', postController]);
+angular.module('PhoenixCMS').controller('PostController', ['$scope', 'httpClient','constants', '$http', '$routeParams', postController]);
 
 function postController($scope, httpClient, constants, $http, $routeParams) {
         $scope.title = "Posts";

@@ -1,4 +1,4 @@
-angular.module('SmartschoolApp').factory('toast', function () {
+angular.module('PhoenixCMS').factory('toast', function () {
 
     options = {
         "closeButton": true,

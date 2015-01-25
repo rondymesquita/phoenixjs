@@ -1,4 +1,4 @@
-angular.module('SmartschoolApp').constant('constants',{
+angular.module('PhoenixCMS').constant('constants',{
   authTokenKey: 'X-Auth-Token',
   usernameKey: 'username',
   status: {

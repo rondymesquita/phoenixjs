@@ -1,13 +1,16 @@
 <app-header>
 </app-header>
+<title>{{appName}}</title>
 <div class="container-fluid mainContent">
 
 
     <ul ng-repeat="post in posts">
-        <li>
+
+        <div class="row">
+            <img ng-src="{{post.image}}"/>
             <h4><a href="#post/{{post.id}}">{{post.title}}</a></h4>
             <p>{{post.excerpt}}</p>
-        </li>
+        </div>
     </ul>
 
     <!-- <md ng-include="'../../posts/1.md'"></md> -->

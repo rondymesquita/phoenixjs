@@ -1,4 +1,4 @@
-angular.module('SmartschoolApp').service('httpClient', ['$http', 'config', function($http, config) {
+angular.module('PhoenixCMS').service('httpClient', ['$http', 'config', function($http, config) {
 
 	this.sayHello = function() {
 		alert("Hello!");

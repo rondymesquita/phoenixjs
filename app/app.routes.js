@@ -1,4 +1,4 @@
-angular.module('SmartschoolApp').config(config);
+angular.module('PhoenixCMS').config(config);
 
 function config($routeProvider) {
     $routeProvider

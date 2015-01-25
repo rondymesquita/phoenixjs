@@ -1,8 +1,10 @@
 [
     {
         "id": "1",
-        "title": "Intrat tellusque longave alios",
-        "excerpt": "Lorem markdownum limes frondes praeceps Phoebi iussit. Pallor saetas, tigres."
+        "title": "Iniciando com Angularjs",
+        "excerpt": "AngularJS é um framework javascript que permite extender suas páginas web, tornando-as melhores de manter, e deixando seu código javascript organizado e fácil de testar.",
+        "image":"../../posts/images/rondymesquita.png"
+
     }
 
 ]

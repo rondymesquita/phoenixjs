@@ -1,4 +1,4 @@
-angular.module('SmartschoolApp').directive('modal', ['$sce', '$http', function ($sce, $http) {
+angular.module('PhoenixCMS').directive('modal', ['$sce', '$http', function ($sce, $http) {
     return {
         restrict: 'AE',
         scope: {
