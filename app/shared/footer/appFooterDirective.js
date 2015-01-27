@@ -1,6 +1,6 @@
-angular.module('SmartschoolApp').directive('appFooter',function(){
+angular.module('PhoenixCMS').directive('appFooter',function(){
     return {
         restrict: 'E',
-        templateUrl: '../../shared/footer/appFooterView.html'
+        templateUrl: 'app/shared/footer/appFooterView.html'
     };
 });

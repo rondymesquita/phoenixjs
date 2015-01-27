@@ -7,7 +7,7 @@ angular.module('PhoenixCMS').directive('modal', ['$sce', '$http', function ($sce
             modalDismissible: '=?'
 
         },
-        templateUrl: '../../shared/modal/modalView.html',
+        templateUrl: 'app/shared/modal/modalView.html',
         transclude: true,
         controller: function ($scope, $element, $attrs) {
             $scope.handler = new Date().getTime(); //previous 'customModal'
