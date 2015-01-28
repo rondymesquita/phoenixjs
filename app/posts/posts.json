@@ -1,31 +1,21 @@
 [
     {
         "id": "1",
-        "title": "Iniciando com Angularjs",
+        "title": "Angularjs",
         "excerpt": "AngularJS é um framework javascript que permite extender suas páginas web, tornando-as melhores de manter, e deixando seu código javascript organizado e fácil de testar.",
-        "image":"app/posts/images/rondymesquita.png"
-
+        "image":"app/posts/images/rondymesquita.png",
+        "categories": [
+            "javascript"
+        ]
     },
     {
         "id": "2",
-        "title": "Iniciando com Gradlé",
+        "title": "Gradle",
         "excerpt": "AngularJS é um framework javascript que permite extender suas páginas web, tornando-as melhores de manter, e deixando seu código javascript organizado e fácil de testar.",
-        "image":"app/posts/images/rondymesquita.png"
-
-    },
-    {
-        "id": "3",
-        "title": "Iniciando com Maven",
-        "excerpt": "AngularJS é um framework javascript que permite extender suas páginas web, tornando-as melhores de manter, e deixando seu código javascript organizado e fácil de testar.",
-        "image":"app/posts/images/rondymesquita.png"
-
-    },
-    {
-        "id": "4",
-        "title": "Iniciando com Spring",
-        "excerpt": "AngularJS é um framework javascript que permite extender suas páginas web, tornando-as melhores de manter, e deixando seu código javascript organizado e fácil de testar.",
-        "image":"app/posts/images/rondymesquita.png"
-
+        "image":"app/posts/images/rondymesquita.png",
+        "categories": [
+            "java"
+        ]
     }
 
 ]

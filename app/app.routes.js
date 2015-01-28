@@ -7,7 +7,7 @@ function config($routeProvider, $locationProvider) {
 
     .when('/', {
         templateUrl : 'app/components/post/postList.html',
-        controller  : 'PostController'
+        controller  : 'PostListController'
     })
 
     .when('/post/:id/:title', {
@@ -15,9 +15,16 @@ function config($routeProvider, $locationProvider) {
             console.log(urlattr.id);
             return 'app/components/post/postView.html';
         },
-        controller  : 'PostController'
+        controller  : 'PostViewController'
     })
 
+    .when('/category/:category/', {
+        templateUrl : function(urlattr){
+            console.log(urlattr.id);
+            return 'app/components/post/postList.html';
+        },
+        controller  : 'PostListController'
+    })
 
     .otherwise({
         templateUrl : './../commons/404.html'
