@@ -20,10 +20,10 @@ function routesConfig($routeProvider, $locationProvider, config) {
 
     .when('/category/:category/', {
         templateUrl : function(urlattr){
-            console.log(urlattr.id);
-            return 'app/themes/' + config.theme + '/posts/list.html';
+            console.log(urlattr.category);
+            return 'app/themes/' + config.theme + '/posts/byCategory.html';
         },
-        controller  : 'PostListController'
+        controller  : 'PostController'
     })
 
     .otherwise({

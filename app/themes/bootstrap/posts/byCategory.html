@@ -1,0 +1,30 @@
+<app-header>
+</app-header>
+<div class="container-fluid mainContent">
+
+    <div class="well">
+        <a href="#/" class="btn btn-default">Voltar</a>
+    </div>
+
+    <img ng-src="{{post.image}}"/>
+
+
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="list-group">
+                <a href="#category/{{category}}" class="list-group-item" ng-repeat="category in categories">{{category}}</a>
+            </div>
+        </div>
+
+        <div class="col-xs-9">
+            <md ng-include="post"></md>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+<app-footer>
+</app-footer>

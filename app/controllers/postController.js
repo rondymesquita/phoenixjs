@@ -6,16 +6,28 @@ function postController($scope, $rootScope, $http, $routeParams, postService) {
 
 
     $scope.routeParams = $routeParams;
-    $scope.post = 'app/posts/' + $scope.routeParams.id + '.md';
 
-    if($scope.routeParams.category){
+
+    if($scope.routeParams.id){
+        $scope.post = 'app/posts/' + $scope.routeParams.id + '.md';
+    }else if($scope.routeParams.category){
         console.log("listando por categoria: "+$scope.routeParams.category);
+
+        postService.listByCategory($scope.routeParams.category, function(query){
+            $rootScope.posts = query.posts;
+            $rootScope.categories = query.categories;
+        });
+
+    }else{
+
     }
 
     postService.list(function(query){
         $rootScope.posts = query.posts;
         $rootScope.categories = query.categories;
     });
+
+
 
 
 
