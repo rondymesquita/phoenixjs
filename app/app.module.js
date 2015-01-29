@@ -7,7 +7,7 @@ angular
 });
 
 
-var interceptor = function ($q, $location, constants) {
+var interceptor = function ($q, $location) {
     return {
         request: function (request) {
 

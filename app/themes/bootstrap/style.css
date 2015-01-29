@@ -1,13 +1,13 @@
 @font-face{
-    src: url("../fonts/Lato.ttf");
+    src: url("fonts/Lato.ttf");
     font-family:Lato;
 }
 @font-face{
-    src: url("../fonts/Lato-Bol.ttf");
+    src: url("fonts/Lato-Bol.ttf");
     font-family:Lato-Bold;
 }
 @font-face{
-    src: url("../fonts/Russo_One.ttf");
+    src: url("fonts/Russo_One.ttf");
     font-family:Russo;
 }
 body, h1,h2,h3,h4,h5,h6{

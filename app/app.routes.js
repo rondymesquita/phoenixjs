@@ -1,27 +1,27 @@
-angular.module('PhoenixCMS').config(config);
+angular.module('PhoenixCMS').config(routesConfig);
 
-function config($routeProvider, $locationProvider) {
+function routesConfig($routeProvider, $locationProvider, config) {
 
 
     $routeProvider
 
     .when('/', {
-        templateUrl : 'app/components/post/postList.html',
-        controller  : 'PostListController'
+        templateUrl : 'app/themes/' + config.theme + '/posts/list.html',
+        controller  : 'PostController'
     })
 
     .when('/post/:id/:title', {
         templateUrl : function(urlattr){
             console.log(urlattr.id);
-            return 'app/components/post/postView.html';
+            return 'app/themes/' + config.theme + '/posts/view.html';
         },
-        controller  : 'PostViewController'
+        controller  : 'PostController'
     })
 
     .when('/category/:category/', {
         templateUrl : function(urlattr){
             console.log(urlattr.id);
-            return 'app/components/post/postList.html';
+            return 'app/themes/' + config.theme + '/posts/list.html';
         },
         controller  : 'PostListController'
     })
@@ -30,6 +30,5 @@ function config($routeProvider, $locationProvider) {
         templateUrl : './../commons/404.html'
     });
 
-    // $locationProvider.html5Mode(true);
 
 }

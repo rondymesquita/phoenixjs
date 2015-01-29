@@ -5,17 +5,41 @@
         "excerpt": "AngularJS é um framework javascript que permite extender suas páginas web, tornando-as melhores de manter, e deixando seu código javascript organizado e fácil de testar.",
         "image":"app/posts/images/rondymesquita.png",
         "categories": [
-            "javascript"
-        ]
+            "angular", "javascript"
+        ],
+        "tags":[
+            "javascript","basic"
+        ],
+        "author":"Rondinelli Mesquita",
+        "date":"28/01/2015"
     },
     {
         "id": "2",
-        "title": "Gradle",
+        "title": "Angularjs",
         "excerpt": "AngularJS é um framework javascript que permite extender suas páginas web, tornando-as melhores de manter, e deixando seu código javascript organizado e fácil de testar.",
         "image":"app/posts/images/rondymesquita.png",
         "categories": [
-            "java"
-        ]
+            "java", "javascript"
+        ],
+        "tags":[
+            "javascript","basic"
+        ],
+        "author":"Rondinelli Mesquita",
+        "date":"28/01/2015"
+    },
+    {
+        "id": "3",
+        "title": "Angularjs",
+        "excerpt": "AngularJS é um framework javascript que permite extender suas páginas web, tornando-as melhores de manter, e deixando seu código javascript organizado e fácil de testar.",
+        "image":"app/posts/images/rondymesquita.png",
+        "categories": [
+            "angular", "gradle"
+        ],
+        "tags":[
+            "javascript","basic"
+        ],
+        "author":"Rondinelli Mesquita",
+        "date":"28/01/2015"
     }
 
 ]
