@@ -1,4 +1,4 @@
-# Phoenix CMS
+# PhoenixJS
 
 ## Proposal
 - Create an CMS free of server languages, using technologies like javascript, HTML, CSS and Markdown.
