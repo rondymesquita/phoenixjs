@@ -1,30 +1,29 @@
-<app-header>
-</app-header>
-<div class="container-fluid mainContent">
+<header>
+</header>
+<div class="container-fluid">
 
-    <div class="well">
-        <a href="#/" class="btn btn-default">Voltar</a>
-    </div>
-
-    <img ng-src="{{post.image}}"/>
 
 
     <div class="row">
-        <div class="col-xs-3">
-            <div class="list-group">
-                <a ng-repeat="category in categories" href="#category/{{category}}" class="list-group-item" >{{category}}</a>
-            </div>
+        <div class="col-md-8  post-content">
+            <img ng-src="{{post.image}}"/>
+            <h1>{{post.title}}</h1>
+            <p class="post-meta">{{post.date}} by <a href="#">{{post.author}}</a></p>
+            <p class="post-categories">In
+                <span ng-repeat="category in post.categories">
+                    <a href="#/category/{{category}}">{{category}}</a>
+                    <span ng-show="$first || $middle">,</span>
+                </span>
+            </p>
+            <md ng-include="post.content"></md>
+        </div>
+        <div class="col-md-3 col-md-offset-1">
+            <sidebar></sidebar>
         </div>
 
-        <div class="col-xs-9">
-            <md ng-include="post"></md>
-        </div>
     </div>
 
 
-
-
-
 </div>
-<app-footer>
-</app-footer>
+<footer>
+</footer>

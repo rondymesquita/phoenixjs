@@ -56,7 +56,7 @@ function postService($http, config) {
                 //create friendly url
                 data[index]["url"] = generatePostUrl(data[index]);
 
-                //get post categories
+                //get post by categories
                 for(var i = 0; i < data[index].categories.length; i++){
 
                     if(category === data[index].categories[i]){
@@ -72,23 +72,20 @@ function postService($http, config) {
 
     }
 
-    this.getById = function(id){
-        $http.get('app/posts/posts.json').success(function (data){
+    this.getById = function(id, callback){
 
-            $.each(data, function(index, value){
-                //create friendly url
-                data[index]["url"] = generatePostUrl(data[index]);
+        var post = {};
 
-                //get post categories
-                query.categories = query.categories.concat(data[index].categories);
+        $http({
+            method:'GET',
+            url: 'app/posts/posts.json',
+            cache: true
+        }).success(function (data){
 
-                query.posts.push(data[index]);
-
-            });
-
-            callback(query);
+            callback(data[id-1]);
 
         });
+
     }
 
 

@@ -1,5 +1,5 @@
 angular
-.module('PhoenixCMS', ['ngRoute','ngTable','yaru22.md'])
+.module('PhoenixCMS', ['ngRoute','yaru22.md'])
 .run(function(){
     console.log("loaded");
 }).config(function($httpProvider){

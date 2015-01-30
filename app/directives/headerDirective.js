@@ -1,8 +1,8 @@
-angular.module('PhoenixCMS').directive('appHeader',['config', appHeader]);
+angular.module('PhoenixCMS').directive('header',['config', appHeader]);
 
 function appHeader(config){
     return {
         restrict: 'E',
-        templateUrl: 'app/themes/'+config.theme+'/header/appHeaderView.html'
+        templateUrl: 'app/themes/'+config.theme+'/header/header.html'
     };
 }

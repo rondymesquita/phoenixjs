@@ -1,45 +1,30 @@
 [
     {
         "id": "1",
-        "title": "Angularjs",
-        "excerpt": "AngularJS é um framework javascript que permite extender suas páginas web, tornando-as melhores de manter, e deixando seu código javascript organizado e fácil de testar.",
+        "title": "Lorem ipsum dolor sit amet",
+        "excerpt": "Consectetur adipiscing elit. Aenean ligula mauris, dictum vel aliquet at, consequat nec lectus. Pellentesque eget dolor in urna dignissim vehicula. Nulla placerat tincidunt ligula at pretium.",
         "image":"app/posts/images/rondymesquita.png",
         "categories": [
-            "angular", "javascript"
+            "lorem", "ipsum"
         ],
         "tags":[
-            "javascript","basic"
+            "lorem","ipsum"
         ],
         "author":"Rondinelli Mesquita",
-        "date":"28/01/2015"
+        "date":"January 28, 2015"
     },
     {
         "id": "2",
-        "title": "Gradle",
-        "excerpt": "Gradle é um fii duma maezin só o massa",
+        "title": "Mauris tempus ullamcorper",
+        "excerpt": "Aenean vitae elit nec odio blandit dictum sed sit amet erat. Morbi in nisl tellus. Aliquam erat volutpat. Vestibulum vel nunc interdum, rutrum turpis et, mattis arcu. Praesent auctor nisl eu urna mollis blandit. Sed porttitor iaculis risus, vel blandit eros tincidunt ut. Nam eu vehicula purus. Aenean aliquam vitae leo et dictum. Phasellus placerat id diam nec fermentum.",
         "image":"app/posts/images/rondymesquita.png",
         "categories": [
-            "gradle", "java"
+            "turpis", "vitae"
         ],
         "tags":[
-            "javascript","basic"
+            "turpis","basvitaeic"
         ],
         "author":"Rondinelli Mesquita",
-        "date":"28/01/2015"
-    },
-    {
-        "id": "3",
-        "title": "Maven",
-        "excerpt": "Maven é um fii duma maezin só o massa",
-        "image":"app/posts/images/rondymesquita.png",
-        "categories": [
-            "maven","java"
-        ],
-        "tags":[
-            "javascript","basic"
-        ],
-        "author":"Rondinelli Mesquita",
-        "date":"28/01/2015"
+        "date":"January 28, 2015"
     }
-
 ]
