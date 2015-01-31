@@ -7,7 +7,7 @@ function routesConfig($routeProvider, $locationProvider, config) {
 
     .when('/', {
         templateUrl : 'app/themes/' + config.theme + '/posts/list.html',
-        controller  : 'PostController'
+        controller  : 'PostListController'
     })
 
     .when('/post/:id/:title', {
@@ -15,7 +15,7 @@ function routesConfig($routeProvider, $locationProvider, config) {
             console.log(urlattr.id);
             return 'app/themes/' + config.theme + '/posts/view.html';
         },
-        controller  : 'PostController'
+        controller  : 'PostViewController'
     })
 
     .when('/category/:category/', {
@@ -23,7 +23,7 @@ function routesConfig($routeProvider, $locationProvider, config) {
             console.log(urlattr.category);
             return 'app/themes/' + config.theme + '/posts/byCategory.html';
         },
-        controller  : 'PostController'
+        controller  : 'PostByCategoryController'
     })
 
     .otherwise({

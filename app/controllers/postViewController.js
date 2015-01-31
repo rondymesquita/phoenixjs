@@ -1,11 +1,15 @@
 
-angular.module('PhoenixCMS').controller('PostViewController', ['$scope', '$routeParams', postController]);
+angular.module('PhoenixCMS').controller('PostViewController', ['$scope', '$rootScope', '$http', '$routeParams','PostService', postViewController]);
 
-function postController($scope, $routeParams) {
+function postViewController($scope, $rootScope, $http, $routeParams, postService) {
 
+    $scope.title = "Posts";
+    $scope.post = [];
     $scope.routeParams = $routeParams;
-    console.log($routeParams);
-    $scope.post = 'app/posts/' + $scope.routeParams.id + '.md';
 
+    postService.getById($scope.routeParams.id, function(post){
+        $scope.post = post
+        $scope.post.content = 'app/posts/' + $scope.routeParams.id + '.md';
+    });
 
 }

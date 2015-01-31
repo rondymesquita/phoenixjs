@@ -7,22 +7,32 @@
 - Extend with AngularJS
 - Create your own themes
 
-### Requirements
+## Requirements
 - Bower
-- AngularJS
-- JQuery
+- Dependencies declared in bower.json
 
-#### Basic
+## Basic
 - Put themes in **app/themes** folder following the structure
     - [THEME]
         - --- footer
+            - --- footer.html
         - --- header
+            - --- header.html
         - --- posts
             - --- view.html (view the post)
             - --- list.html (list all posts)
             - --- byCategory.html (list posts by category)
-            - --- sidebar (idem)
+        - --- sidebar
+            - --- sidebar.html
 
 
 
-#### This structure may change in the near future :)
+**This structure may change in the near future :)**
+
+## Working on features
+- Support both HTML and Markdown posts
+- Search posts
+- Use Grunt
+- Menu support
+- Comments System
+- Friendly Url

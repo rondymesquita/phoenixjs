@@ -15,11 +15,8 @@
   <script src="bower_components/angular-resource/angular-resource.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
 
-  <script src="bower_components/marked/lib/marked.min.js"></script>
+  <script src="bower_components/marked/lib/marked.js"></script>
   <script src="bower_components/angular-md/dist/angular-md.min.js"></script>
-
-  <!-- Theme Libraries -->
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
   <!-- Phoenix CMS -->
   <script src="app/app.module.js"></script>
@@ -27,7 +24,9 @@
   <script src="app/config.js"></script>
 
   <script src="app/controllers/indexController.js"></script>
-  <script src="app/controllers/postController.js"></script>
+  <script src="app/controllers/postListController.js"></script>
+  <script src="app/controllers/postViewController.js"></script>
+  <script src="app/controllers/postByCategoryController.js"></script>
 
   <script src="app/directives/headerDirective.js"></script>
   <script src="app/directives/footerDirective.js"></script>
@@ -45,7 +44,7 @@
   <!--<script src="http://phoenixcms.disqus.com/embed.js"></script>-->
 
 
-  <title>{{appName}}</title>
+  <title>{{siteName}}</title>
 </head>
 <body>
     <div ng-view autoscroll="true">
