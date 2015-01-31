@@ -1,0 +1,37 @@
+<header>
+</header>
+<title>{{appName}} - {{title}}</title>
+<div class="container-fluid mainContent">
+
+    <div class="row sub-header">
+        <div class="col-xs-12">
+            <h2>Category: {{category}}</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <section ng-repeat="post in posts" class="post-content">
+                <article class="row">
+                    <div class="col-md-12">
+
+                        <img ng-src="{{post.image}}"/>
+                        <h3><a href="#post/{{post.id}}/{{post.url}}">{{post.title}}</a></h3>
+                        <p>{{post.excerpt}}</p>
+                        <a href="#post/{{post.id}}/{{post.url}}">read more &#9658;</a>
+
+                    </div>
+                </article>
+                <hr>
+            </section>
+        </div>
+        <div class="col-md-3 col-md-offset-1">
+            <sidebar></sidebar>
+        </div>
+
+    </div>
+
+
+</div>
+<footer>
+</footer>

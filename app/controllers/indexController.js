@@ -6,7 +6,8 @@ angular
 function indexController ($scope, $rootScope, $routeParams, $location, config, categoryService) {
 
     //loading configuration
-    $scope.appName = config.appName;
+    $scope.siteName = config.siteName;
+    $scope.siteDescription = config.siteDescription;
     $scope.theme = config.theme;
 
     //loading categories
