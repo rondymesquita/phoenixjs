@@ -5,17 +5,45 @@ module.exports = function(grunt) {
         uglify: {
             app: {
                 files: {
-                    'app/controllers/controllers.min.js': ['app/controllers/*.js'],
-                    'app/directives/directives.min.js': ['app/directives/*.js'],
-                    'app/services/services.min.js': ['app/services/*.js'],
-                    'app/app.min.js': ['app/app.module.js','app/app.route.js']
+                    'phoenixjs/app/controllers/controllers.min.js': ['app/controllers/*.js'],
+                    'phoenixjs/app/directives/directives.min.js': ['app/directives/*.js'],
+                    'phoenixjs/app/services/services.min.js': ['app/services/*.js'],
+                    'phoenixjs/app/app.min.js': ['app/app.module.js','app/app.route.js'],
+
+                    'phoenixjs/app/libraries/libraries.min.js': ['bower_components/jquery/dist/jquery.min.js','bower_components/angular/angular.min.js','bower_components/angular-resource/angular-resource.min.js','bower_components/angular-route/angular-route.min.js','bower_components/marked/lib/marked.js','bower_components/angular-md/dist/angular-md.min.js'],
                 }
             }
-        }
+        },
+        mkdir: {
+            all: {
+                options: {
+                    create: [
+                        'phoenixjs',
+                        'phoenixjs/app/controllers',
+                        'phoenixjs/app/directives',
+                        'phoenixjs/app/services',
+                    ]
+                },
+            },
+        },
+        copy: {
+            main: {
+                files: [
+                    {src: 'posts/**/*', dest: 'phoenixjs/'},
+                    {src: 'app/themes/**/*', dest: 'phoenixjs/'}
+                ]
+            },
+        },
     });
 
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-env');
+    grunt.loadNpmTasks('grunt-preprocess');
+    grunt.loadNpmTasks('grunt-mkdir');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+
+    grunt.registerTask('build', ['uglify','mkdir', 'copy']);
 
     // Default task(s).
     // grunt.registerTask('default', ['uglify']);

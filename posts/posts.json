@@ -3,7 +3,7 @@
         "id": "1",
         "title": "Lorem ipsum dolor sit amet",
         "excerpt": "Consectetur adipiscing elit. Aenean ligula mauris, dictum vel aliquet at, consequat nec lectus. Pellentesque eget dolor in urna dignissim vehicula. Nulla placerat tincidunt ligula at pretium.",
-        "image":"app/posts/images/rondymesquita.png",
+        "image":"posts/images/rondymesquita.png",
         "categories": [
             "lorem", "ipsum"
         ],
@@ -17,7 +17,7 @@
         "id": "2",
         "title": "Mauris tempus ullamcorper",
         "excerpt": "Aenean vitae elit nec odio blandit dictum sed sit amet erat. Morbi in nisl tellus. Aliquam erat volutpat. Vestibulum vel nunc interdum, rutrum turpis et, mattis arcu. Praesent auctor nisl eu urna mollis blandit. Sed porttitor iaculis risus, vel blandit eros tincidunt ut. Nam eu vehicula purus. Aenean aliquam vitae leo et dictum. Phasellus placerat id diam nec fermentum.",
-        "image":"app/posts/images/rondymesquita.png",
+        "image":"posts/images/rondymesquita.png",
         "categories": [
             "turpis", "vitae"
         ],

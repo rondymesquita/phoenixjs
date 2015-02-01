@@ -8,7 +8,7 @@ function categoryService($http, config) {
 
         $http({
             method:'GET',
-            url: 'app/posts/posts.json',
+            url: 'posts/posts.json',
             cache: true
         }).success(function (data){
 

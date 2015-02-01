@@ -9,7 +9,7 @@ function postViewController($scope, $rootScope, $http, $routeParams, postService
 
     postService.getById($scope.routeParams.id, function(post){
         $scope.post = post
-        $scope.post.content = 'app/posts/' + $scope.routeParams.id + '.md';
+        $scope.post.content = 'posts/' + $scope.routeParams.id + '.md';
     });
 
 }
