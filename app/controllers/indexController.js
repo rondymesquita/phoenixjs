@@ -1,9 +1,9 @@
 
 angular
     .module('PhoenixCMS')
-    .controller('IndexController', ['$scope', '$rootScope','$routeParams', '$location', 'config','CategoryService', indexController]);
+    .controller('IndexController', ['$scope', '$rootScope','$routeParams', '$location', 'config','CategoryService','PostService', indexController]);
 
-function indexController ($scope, $rootScope, $routeParams, $location, config, categoryService) {
+function indexController ($scope, $rootScope, $routeParams, $location, config, categoryService, postService) {
 
     //loading configuration
     $scope.siteName = config.siteName;

@@ -98,3 +98,11 @@ a.list-group-item-custom:hover{
 .footer{
     margin-top:24px;
 }
+input[type=search]{
+    border-radius:0px;
+
+}
+input[type=search]:focus{
+    border:1px solid #b02b30;
+    box-shadow:none;
+}

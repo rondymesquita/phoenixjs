@@ -2,7 +2,6 @@ angular.module('PhoenixCMS').config(routesConfig);
 
 function routesConfig($routeProvider, $locationProvider, config) {
 
-
     $routeProvider
 
     .when('/', {
@@ -12,7 +11,6 @@ function routesConfig($routeProvider, $locationProvider, config) {
 
     .when('/post/:id/:title', {
         templateUrl : function(urlattr){
-            console.log(urlattr.id);
             return 'app/themes/' + config.theme + '/posts/view.html';
         },
         controller  : 'PostViewController'
@@ -20,14 +18,20 @@ function routesConfig($routeProvider, $locationProvider, config) {
 
     .when('/category/:category/', {
         templateUrl : function(urlattr){
-            console.log(urlattr.category);
             return 'app/themes/' + config.theme + '/posts/byCategory.html';
         },
         controller  : 'PostByCategoryController'
     })
 
+    .when('/search/:search', {
+        templateUrl : function(urlattr){
+            return 'app/themes/' + config.theme + '/posts/bySearch.html'
+        },
+        controller  : 'PostBySearchController'
+    })
+
     .otherwise({
-        templateUrl : './../commons/404.html'
+        templateUrl : 'app/themes/' + config.theme + '/pages/404.html',
     });
 
 

@@ -1,9 +1,9 @@
-<div class="search-sidebar">
+<div class="search-sidebar" ng-controller="PostBySearchController">
     <h4>
         Search
     </h4>
-    <form id="form-search">
-        <input type="search" class="form-control"/>
+    <form id="form-search" ng-submit="searchPosts(search)">
+        <input type="search" class="form-control" ng-model="search" placeholder="Type your search and hit enter"/>
     </form>
 </div>
 

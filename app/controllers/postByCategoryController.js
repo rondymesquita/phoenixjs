@@ -3,7 +3,6 @@ angular.module('PhoenixCMS').controller('PostByCategoryController', ['$scope', '
 function postByCategoryController($scope, $rootScope, $http, $routeParams, postService) {
 
     $scope.title = "Posts";
-    $scope.post = [];
     $scope.routeParams = $routeParams;
 
     postService.listByCategory($scope.routeParams.category, function(posts){
