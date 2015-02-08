@@ -1,5 +1,5 @@
 angular.module('PhoenixCMS').constant('config',{
-    siteName: 'Phoenix CMS',
+    siteName: 'PhoenixJS',
     siteDescription: 'Simple CMS AngularJS Based',
     theme: 'rising'
 });

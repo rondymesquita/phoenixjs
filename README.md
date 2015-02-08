@@ -22,6 +22,7 @@
             - --- view.html (view the post)
             - --- list.html (list all posts)
             - --- byCategory.html (list posts by category)
+            - --- bySearch.html (lists posts based on search)
         - --- sidebar
             - --- sidebar.html
 

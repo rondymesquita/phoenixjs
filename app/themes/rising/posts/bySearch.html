@@ -5,7 +5,8 @@
 
     <div class="row sub-header">
         <div class="col-xs-12">
-            <h2>Search results for: {{search}}</h2>
+            <h2 ng-show="{{posts.length > 0}}">Search results for: {{search}}</h2>
+            <h2 ng-show="{{posts.length == 0}}">Search results for: {{search}}</h2>
         </div>
     </div>
 
