@@ -1,30 +1,30 @@
 [
     {
         "id": "1",
-        "title": "First: Lorem ipsum dolor sit amet",
-        "excerpt": "Consectetur adipiscing elit. Aenean ligula mauris, dictum vel aliquet at, consequat nec lectus. Pellentesque eget dolor in urna dignissim vehicula. Nulla placerat tincidunt ligula at pretium.",
-        "image":"posts/images/rondymesquita.png",
+        "title": "The Empire Strikes Back",
+        "excerpt": "Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force. Remember, a Jedi can feel the Force flowing through him. Look, I ain't in this for your revolution, and I'm not in it for you, Princess. I expect to be well paid.",
+        "image":"posts/images/starwars_the_empire_strikes_back.jpg",
         "categories": [
-            "lorem", "ipsum"
+            "star-wars", "the-empire-strikes-back","movies"
         ],
         "tags":[
             "lorem","ipsum"
         ],
-        "author":"Alvaro",
+        "author":"Rondy Mesquita",
         "date":"January 28, 2015"
     },
     {
         "id": "2",
-        "title": "Second: Mauris tempus ullamcorper",
-        "excerpt": "Aenean vitae elit nec odio blandit dictum sed sit amet erat. Morbi in nisl tellus. Aliquam erat volutpat. Vestibulum vel nunc interdum, rutrum turpis et, mattis arcu. Praesent auctor nisl eu urna mollis blandit. Sed porttitor iaculis risus, vel blandit eros tincidunt ut. Nam eu vehicula purus. Aenean aliquam vitae leo et dictum. Phasellus placerat id diam nec fermentum.",
-        "image":"posts/images/rondymesquita.png",
+        "title": "A New Hope",
+        "excerpt": "Look, I ain't in this for your revolution, and I'm not in it for you, Princess. I expect to be well paid. I'm in it for the money. I care. So, what do you think of her, Han? He is here. What?! I find your lack of faith disturbing. You are a part of the Rebel Alliance and a traitor! Take her away!",
+        "image":"posts/images/starwars_a_new_hope.jpg",
         "categories": [
-            "turpis", "vitae"
+            "star-wars", "a-new-hope","movies"
         ],
         "tags":[
             "turpis","basvitaeic"
         ],
-        "author":"Rondinelli Mesquita",
+        "author":"Rondy Mesquita",
         "date":"January 28, 2015"
     }
 ]

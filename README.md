@@ -32,8 +32,8 @@
 
 ## Working on features
 - Support both HTML and Markdown posts
-- Search posts
+- Search posts - on going
 - Use Grunt
-- Menu support
+- Menu support - on going
 - Comments System
 - Friendly Url

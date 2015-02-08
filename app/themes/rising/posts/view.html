@@ -14,7 +14,8 @@
                     <span ng-show="$first || $middle">,</span>
                 </span>
             </p>
-            <md ng-include="post.content"></md>
+            <!-- <md ng-include="post.content"></md> -->
+            <div btf-markdown ng-include="post.content"></div>
         </div>
         <div class="col-md-3 col-md-offset-1">
             <sidebar></sidebar>

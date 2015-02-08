@@ -89,7 +89,7 @@ a.list-group-item-custom:hover{
     border:none;
     padding: 5px 15px;
     color:#651314;
-    background:#fff;
+    background:transparent;
     text-decoration:underline;
 }
 .list-group-custom{
@@ -109,4 +109,15 @@ input[type=search]:focus{
 menu{
     margin:0;
     padding:0;
+}
+section img{
+    max-width:100%;
+    width:300px;
+}
+.footer{
+    background:#f4f4f4;
+    padding:24px 0;
+}
+.text-center{
+    text-align:center;
 }
