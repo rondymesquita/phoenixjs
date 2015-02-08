@@ -49,7 +49,7 @@ function indexController ($scope, $rootScope, $routeParams, $location, config, c
             "title":"Twitter",
             "url":"https://twitter.com/rondymesquita"
         }
-    ]
+    ];
 
 
 

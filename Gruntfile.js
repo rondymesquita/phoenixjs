@@ -3,6 +3,9 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         uglify: {
+            options: {
+                mangle: false
+            },
             app: {
                 files: {
                     'phoenixjs/app/controllers/controllers.min.js': ['app/controllers/*.js'],
@@ -10,7 +13,13 @@ module.exports = function(grunt) {
                     'phoenixjs/app/services/services.min.js': ['app/services/*.js'],
                     'phoenixjs/app/app.min.js': ['app/app.module.js','app/app.route.js'],
 
-                    'phoenixjs/app/libraries/libraries.min.js': ['bower_components/jquery/dist/jquery.min.js','bower_components/angular/angular.min.js','bower_components/angular-resource/angular-resource.min.js','bower_components/angular-route/angular-route.min.js','bower_components/marked/lib/marked.js','bower_components/angular-md/dist/angular-md.min.js'],
+                    // 'phoenixjs/app/libraries/libraries.min.js': [
+                    //     'bower_components/jquery/dist/jquery.min.js',
+                    //     'bower_components/angular/angular.min.js',
+                    //     'bower_components/angular-resource/angular-resource.min.js',
+                    //     'bower_components/angular-route/angular-route.min.js',
+                    //     'bower_components/marked/lib/marked.js',
+                    //     'bower_components/angular-md/dist/angular-md.min.js'],
                 }
             }
         },
@@ -18,10 +27,10 @@ module.exports = function(grunt) {
             all: {
                 options: {
                     create: [
-                        'phoenixjs',
-                        'phoenixjs/app/controllers',
-                        'phoenixjs/app/directives',
-                        'phoenixjs/app/services',
+                    'phoenixjs',
+                    'phoenixjs/app/controllers',
+                    'phoenixjs/app/directives',
+                    'phoenixjs/app/services',
                     ]
                 },
             },
@@ -29,11 +38,45 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                    {src: 'posts/**/*', dest: 'phoenixjs/'},
-                    {src: 'app/themes/**/*', dest: 'phoenixjs/'}
+                {src: 'app/config.js', dest: 'phoenixjs/'},
+                {src: 'posts/**/*', dest: 'phoenixjs/'},
+                {src: 'app/themes/**/*', dest: 'phoenixjs/'},
+                {src: 'bower_components/**/*', dest: 'phoenixjs/'},
                 ]
             },
         },
+        env : {
+
+            options : {
+
+                /* Shared Options Hash */
+                //globalOption : 'foo'
+
+            },
+
+            dev: {
+
+                NODE_ENV : 'DEVELOPMENT'
+
+            },
+
+            prod : {
+
+                NODE_ENV : 'PRODUCTION'
+
+            }
+
+        },
+        preprocess : {
+
+            prod : {
+
+                src : './src/tmpl/index.html',
+                dest : './phoenixjs/index.html'
+
+            }
+
+        }
     });
 
     // Load the plugin that provides the "uglify" task.
@@ -43,7 +86,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-mkdir');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('build', ['uglify','mkdir', 'copy']);
+    grunt.registerTask('build', ['uglify','mkdir', 'env:prod', 'copy','preprocess:prod']);
+    // grunt.registerTask('prod', ['jshint', 'env:prod', 'clean:prod', 'uglify:prod', 'cssmin:prod', 'copy:prod', 'preprocess:prod']);
 
     // Default task(s).
     // grunt.registerTask('default', ['uglify']);
