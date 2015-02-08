@@ -2,6 +2,8 @@ angular.module('PhoenixCMS').service('PostService', ['$http', 'config', postServ
 
 function postService($http, config) {
 
+    var postsLocation = 'content/posts/posts.json';
+
     function Query(){
         this.posts = [];
         this.categories = [];
@@ -17,7 +19,7 @@ function postService($http, config) {
 
         $http({
             method:'GET',
-            url: 'posts/posts.json',
+            url: postsLocation,
             cache: true
         }).success(function (data){
 
@@ -40,7 +42,7 @@ function postService($http, config) {
 
         $http({
             method:'GET',
-            url: 'posts/posts.json',
+            url: postsLocation,
             cache: true
             }).success(function (data){
 
@@ -69,7 +71,7 @@ function postService($http, config) {
 
         $http({
             method:'GET',
-            url: 'posts/posts.json',
+            url: postsLocation,
             cache: true
         }).success(function (data){
             callback(data[id-1]);
@@ -86,7 +88,7 @@ function postService($http, config) {
 
         var jsonRequest = $http({
             method:'GET',
-            url: 'posts/posts.json',
+            url: postsLocation,
             cache: true
         }).success(function (posts){
 
@@ -122,7 +124,7 @@ function postService($http, config) {
 
                 var markdownRequests = $http({
                     method:'GET',
-                    url: 'posts/' + value["id"] + '.md',
+                    url: 'content/posts/' + value["id"] + '.md',
                     cache: true
                 }).success(function(md){
 

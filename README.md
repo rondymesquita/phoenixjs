@@ -31,9 +31,9 @@
 **This structure may change in the near future :)**
 
 ## Working on features
-- Support both HTML and Markdown posts
-- Search posts - on going
-- Use Grunt
-- Menu support - on going
-- Comments System
-- Friendly Url
+- √ Support both HTML and Markdown posts
+- √ Search posts
+-   Use Grunt
+- √ Menu support
+- • Comments System
+-   Friendly Url

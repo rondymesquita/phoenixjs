@@ -16,7 +16,7 @@ function indexController ($scope, $rootScope, $routeParams, $location, config, c
         $scope.categories = categories;
     });
 
-    service.get('app/themes/'+config.theme+'/menus/menu.json',function(data){
+    service.get('content/menus/menu.json',function(data){
         $scope.menuLinks = data;
     });
 

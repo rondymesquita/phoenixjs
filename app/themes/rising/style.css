@@ -110,7 +110,8 @@ menu{
     margin:0;
     padding:0;
 }
-section img{
+section img,
+.featured-image{
     max-width:100%;
     width:300px;
 }

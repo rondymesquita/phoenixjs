@@ -2,13 +2,15 @@ angular.module('PhoenixCMS').service('CategoryService', ['$http', 'config', cate
 
 function categoryService($http, config) {
 
+    var postsLocation = 'content/posts/posts.json';
+
     this.list = function(callback){
 
         var categories = [];
 
         $http({
             method:'GET',
-            url: 'posts/posts.json',
+            url:  postsLocation,
             cache: true
         }).success(function (data){
 
