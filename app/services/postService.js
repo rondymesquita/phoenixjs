@@ -80,32 +80,70 @@ function postService($http, config) {
 
     this.getByCriteria = function(search, callback){
 
-        var posts = [];
+        var result = [];
 
-        $http({
+        var deferred = $.Deferred();
+
+        var jsonRequest = $http({
             method:'GET',
             url: 'posts/posts.json',
             cache: true
-        }).success(function (data){
+        }).success(function (posts){
 
-            $.each(data, function(index, value){
-                data[index]["url"] = generatePostUrl(data[index]);
+            $.each(posts, function(index, value){
+                posts[index]["url"] = generatePostUrl(posts[index]);
                 // console.log(value);
+
                 var insertThisPost = false;
-                $.each(data[index], function(index, value){
-                    console.log(value);
+
+                $.each(posts[index], function(index, value){
+                    // console.log(value);
                     if(value.indexOf(search) != -1)
                         insertThisPost = true;
                 });
 
+
                 if(insertThisPost)
-                    posts.push(data[index]);
+                    result.push(posts[index]);
 
             });
 
-            callback(posts);
+            // console.log(posts.length);
+            deferred.resolve(result, posts);
+            // callback(result);
+        });
+
+        var markdownRequests = [];
+
+        deferred.done(function(result, posts){
+
+            $.each(posts, function(index, value){
+
+
+                var markdownRequests = $http({
+                    method:'GET',
+                    url: 'posts/' + value["id"] + '.md',
+                    cache: true
+                }).success(function(md){
+
+                    if(md.indexOf(search) != -1 && $.inArray(posts[index], result) == -1){
+                        result.push(posts[index]);
+                    }
+
+                });
+
+                // markdownRequests.push(markdownRequests);
+
+            });
+
+            callback(result);
 
         });
+
+        // $.when.apply($, markdownRequests).done(function(){
+        //     callback(result);
+        // });
+
 
     }
 
