@@ -1,5 +1,5 @@
 angular
-.module('PhoenixCMS', ['ngRoute','yaru22.md','btford.markdown'])
+.module('PhoenixCMS', ['ngRoute','btford.markdown'])
 .run(function(){
     console.log("loaded");
 }).config(function($httpProvider){

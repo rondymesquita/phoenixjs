@@ -26,5 +26,19 @@
         ],
         "author":"Rondy Mesquita",
         "date":"January 28, 2015"
+    },
+    {
+        "id": "3",
+        "title": "The Clone Wars",
+        "excerpt": "Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force. All right. Well, take care of yourself, Han. I guess that's what you're best at, ain't it? Oh God, my uncle. How am I ever gonna explain this? Dantooine. They're on Dantooine. I call it luck.",
+        "image":"posts/images/starwars_a_new_hope.jpg",
+        "categories": [
+            "star-wars", "the-clone-wars","movies"
+        ],
+        "tags":[
+            "turpis","basvitaeic"
+        ],
+        "author":"Rondy Mesquita",
+        "date":"January 28, 2015"
     }
 ]
