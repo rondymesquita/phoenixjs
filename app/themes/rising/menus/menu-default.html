@@ -1,0 +1,7 @@
+<div class="masthead">
+    <div class="container-fluid">
+        <nav class="masthead-nav">
+            <a class="masthead-nav-item" ng-repeat="link in menuLinks" href="{{link.url}}" ng-class="{active: isActive(link)}">{{link.title}}</a>
+        </nav>
+    </div>
+</div>

@@ -106,3 +106,7 @@ input[type=search]:focus{
     border:1px solid #b02b30;
     box-shadow:none;
 }
+menu{
+    margin:0;
+    padding:0;
+}
