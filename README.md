@@ -40,3 +40,6 @@
 - • Comments System
 -   Friendly Url
 -   Add loading when changing page
+
+## Known issues
+- Search is not case insensitive (should be)
