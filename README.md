@@ -39,3 +39,4 @@
 - √ Menu support
 - • Comments System
 -   Friendly Url
+-   Add loading when changing page
