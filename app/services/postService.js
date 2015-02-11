@@ -82,6 +82,9 @@ function postService($http, config) {
 
     this.getByCriteria = function(search, callback){
 
+        search = EncodeString(search);
+        console.log(search);
+
         var result = [];
 
         var deferred = $.Deferred();
@@ -94,12 +97,12 @@ function postService($http, config) {
 
             $.each(posts, function(index, value){
                 posts[index]["url"] = generatePostUrl(posts[index]);
-                // console.log(value);
 
                 var insertThisPost = false;
 
                 $.each(posts[index], function(index, value){
-                    // console.log(value);
+
+                    value = EncodeString(value);
                     if(value.indexOf(search) != -1)
                         insertThisPost = true;
                 });
@@ -121,13 +124,12 @@ function postService($http, config) {
 
             $.each(posts, function(index, value){
 
-
                 var markdownRequests = $http({
                     method:'GET',
                     url: 'content/posts/' + value["id"] + '.md',
                     cache: true
                 }).success(function(md){
-
+                    md = EncodeString(md);
                     if(md.indexOf(search) != -1 && $.inArray(posts[index], result) == -1){
                         result.push(posts[index]);
                     }

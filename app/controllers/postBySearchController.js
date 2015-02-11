@@ -8,11 +8,9 @@ function postBySearchController($scope, $rootScope, $http, $routeParams, $locati
     $scope.routeParams = $routeParams;
 
     $scope.searchPosts = function(search){
-        // postService.getByCriteria(search,function(posts){
             $location.url("/search/"+search);
-        // });
     }
-
+    console.log($location);
     postService.getByCriteria($scope.routeParams.search,function(posts){
         $scope.posts = posts;
         $scope.search = $scope.routeParams.search;
