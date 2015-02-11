@@ -27,6 +27,10 @@ function indexController ($scope, $rootScope, $routeParams, $location, config, c
       return false;
     };
 
+    $scope.searchPosts = function(search){
+        $location.path("/search/"+search);
+    }
+
     //social
     $scope.social = [
         {

@@ -8,6 +8,7 @@ function postListController($scope, $rootScope, $http, $routeParams, postService
     $scope.routeParams = $routeParams;
 
     postService.list(function(posts){
+        console.log("List Post");
         $scope.posts = posts;
     });
 

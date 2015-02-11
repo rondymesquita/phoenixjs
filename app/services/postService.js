@@ -83,7 +83,6 @@ function postService($http, config) {
     this.getByCriteria = function(search, callback){
 
         search = EncodeString(search);
-        console.log(search);
 
         var result = [];
 

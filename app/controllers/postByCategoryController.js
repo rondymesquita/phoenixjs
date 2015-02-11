@@ -6,7 +6,7 @@ function postByCategoryController($scope, $rootScope, $http, $routeParams, postS
     $scope.routeParams = $routeParams;
 
     postService.listByCategory($scope.routeParams.category, function(posts){
-        console.log("Listando tudo!");
+        console.log("By category post");
         $scope.posts = posts;
         $scope.category = $scope.routeParams.category;
     });

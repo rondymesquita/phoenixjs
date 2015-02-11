@@ -27,7 +27,7 @@ function routesConfig($routeProvider, $locationProvider, config) {
         templateUrl : function(urlattr){
             return 'app/themes/' + config.theme + '/posts/bySearch.html'
         },
-        controller  : 'PostBySearchController'
+        controller  : 'PostBySearchController',
     })
 
     .otherwise({
