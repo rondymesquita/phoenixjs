@@ -80,6 +80,23 @@ function postService($http, config) {
 
     }
 
+
+    this.getBySearch = function(search, callback){
+
+        var request = $http({
+            method:'GET',
+            url: 'app/services/search.php?search='+search,
+            //url: 'content/posts/results.json',
+            cache: true,
+        }).success(function(posts){
+                console.log("Result: ");
+                console.log(posts);
+                callback(posts);
+
+        });
+
+    }
+
     this.getByCriteria = function(search, callback){
 
         search = EncodeString(search);

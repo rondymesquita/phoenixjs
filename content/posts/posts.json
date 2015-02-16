@@ -11,8 +11,10 @@
             "lorem","ipsum"
         ],
         "author":"Rondy Mesquita",
-        "date":"January 28, 2015"
-    },
+        "date":"January 28, 2015",
+        "type":"md"
+    }
+    ,
     {
         "id": "2",
         "title": "A New Hope",
@@ -25,7 +27,8 @@
             "turpis","basvitaeic"
         ],
         "author":"Rondy Mesquita",
-        "date":"January 28, 2015"
+        "date":"January 28, 2015",
+        "type":"md"
     },
     {
         "id": "3",
@@ -39,7 +42,8 @@
             "turpis","basvitaeic"
         ],
         "author":"Rondy Mesquita",
-        "date":"January 28, 2015"
+        "date":"January 28, 2015",
+        "type":"html"
     },
     {
         "id": "4",
@@ -53,6 +57,7 @@
             "turpis","basvitaeic"
         ],
         "author":"Rondy Mesquita",
-        "date":"January 28, 2015"
+        "date":"January 28, 2015",
+        "type":"md"
     }
 ]
