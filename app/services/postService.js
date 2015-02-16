@@ -2,7 +2,7 @@ angular.module('PhoenixCMS').service('PostService', ['$http', 'config', postServ
 
 function postService($http, config) {
 
-    var postsLocation = 'content/posts/posts.json';
+    var serviceUrl = 'app/services/postService.php';
 
     function Query(){
         this.posts = [];
@@ -15,20 +15,23 @@ function postService($http, config) {
 
     this.list = function(callback){
 
-        var posts = [];
+        //var posts = [];
 
         $http({
             method:'GET',
-            url: postsLocation,
+            url: serviceUrl,
             cache: true
-        }).success(function (data){
+        }).success(function (posts){
 
-            $.each(data, function(index, value){
-                //create friendly url
-                data[index]["url"] = generatePostUrl(data[index]);
-                posts.push(data[index]);
+            console.log("Posts: ");
+            console.log(posts);
 
-            });
+            //$.each(data, function(index, value){
+            //    //create friendly url
+            //    data[index]["url"] = generatePostUrl(data[index]);
+            //    posts.push(data[index]);
+            //
+            //});
 
             callback(posts);
 
@@ -42,13 +45,13 @@ function postService($http, config) {
 
         $http({
             method:'GET',
-            url: postsLocation,
+            url: serviceUrl,
             cache: true
             }).success(function (data){
 
             $.each(data, function(index, value){
                 //create friendly url
-                data[index]["url"] = generatePostUrl(data[index]);
+                //data[index]["url"] = generatePostUrl(data[index]);
 
                 //get post by categories
                 for(var i = 0; i < data[index].categories.length; i++){
@@ -71,11 +74,11 @@ function postService($http, config) {
 
         $http({
             method:'GET',
-            url: postsLocation,
+            url: serviceUrl,
             cache: true
         }).success(function (data){
+            console.log(data);
             callback(data[id-1]);
-
         });
 
     }
@@ -83,15 +86,35 @@ function postService($http, config) {
 
     this.getBySearch = function(search, callback){
 
+        search = EncodeString(search);
+        var result = [];
+
         var request = $http({
             method:'GET',
-            url: 'app/services/search.php?search='+search,
+            url: serviceUrl,
             //url: 'content/posts/results.json',
             cache: true,
         }).success(function(posts){
                 console.log("Result: ");
                 console.log(posts);
-                callback(posts);
+
+            $.each(posts, function(index, value){
+
+                var insertThisPost = false;
+
+                $.each(posts[index], function(index, value){
+
+                    value = EncodeString(value);
+                    if(value.indexOf(search) != -1)
+                        insertThisPost = true;
+                });
+
+                if(insertThisPost)
+                    result.push(posts[index]);
+
+            });
+
+            callback(result);
 
         });
 
@@ -107,7 +130,7 @@ function postService($http, config) {
 
         var jsonRequest = $http({
             method:'GET',
-            url: postsLocation,
+            url: serviceUrl,
             cache: true
         }).success(function (posts){
 

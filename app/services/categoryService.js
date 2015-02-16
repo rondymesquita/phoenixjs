@@ -2,7 +2,7 @@ angular.module('PhoenixCMS').service('CategoryService', ['$http', 'config', cate
 
 function categoryService($http, config) {
 
-    var postsLocation = 'content/posts/posts.json';
+    var serviceUrl = 'app/services/postService.php';
 
     this.list = function(callback){
 
@@ -10,19 +10,18 @@ function categoryService($http, config) {
 
         $http({
             method:'GET',
-            url:  postsLocation,
+            url:  serviceUrl,
             cache: true
-        }).success(function (data){
+        }).success(function (posts){
 
-            $.each(data, function(index, value){
+            $.each(posts, function(index, value){
 
                 //get post categories
-                for(var i = 0; i < data[index].categories.length; i++){
-                    if($.inArray(data[index].categories[i], categories) == -1){
-                        categories = categories.concat(data[index].categories[i]);
+                for(var i = 0; i < posts[index].categories.length; i++){
+                    if($.inArray(posts[index].categories[i], categories) == -1){
+                        categories = categories.concat(posts[index].categories[i]);
                     }
                 }
-
             });
 
             callback(categories);
