@@ -15,8 +15,6 @@ function postService($http, config) {
 
     this.list = function(callback){
 
-        //var posts = [];
-
         $http({
             method:'GET',
             url: serviceUrl,
@@ -25,13 +23,6 @@ function postService($http, config) {
 
             console.log("Posts: ");
             console.log(posts);
-
-            //$.each(data, function(index, value){
-            //    //create friendly url
-            //    data[index]["url"] = generatePostUrl(data[index]);
-            //    posts.push(data[index]);
-            //
-            //});
 
             callback(posts);
 

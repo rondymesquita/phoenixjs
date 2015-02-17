@@ -7,10 +7,10 @@ function stripAccents($str) {
 
 }
 
-    $index_filename = '../../content/posts/_index.json';
+    $index_filename = '../../content/posts/_index';
     $hash_filename  = '../../content/posts/_hash';
     $posts_filename = '../../content/posts/posts.json';
-    $posts = [];
+    $posts = array();
 
     //if file does not exists
     if(
