@@ -10,17 +10,17 @@ function stripAccents($str) {
     $index_filename = '../../content/posts/_index';
     $hash_filename  = '../../content/posts/_hash';
     $posts_filename = '../../content/posts/posts.json';
-    $posts = array();
 
     //if file does not exists
     if(
         (!file_exists($index_filename)) ||
-        (file_exists($index_filename) && file_get_contents($hash_filename) != hash_file('md5', $posts_filename))
+        (file_exists($index_filename) && file_exists($hash_filename) && file_get_contents($hash_filename) != hash_file('md5', $posts_filename))
     ){
 
         $json = file_get_contents("../../content/posts/posts.json");
         $json_string = json_decode($json, true);
 
+        $posts = array();
 
         foreach($json_string as $post) {
 
@@ -32,7 +32,7 @@ function stripAccents($str) {
             array_push($posts, $post);
         }
 
-        file_put_contents($index_filename, json_encode($posts , JSON_UNESCAPED_UNICODE));
+        file_put_contents($index_filename, json_encode($posts));
         file_put_contents($hash_filename, hash_file('md5', $posts_filename));
 
         $result = "Não existe ou alteracoes não computadas! Arquivo sendo criado!";
@@ -41,8 +41,6 @@ function stripAccents($str) {
         $result = "Já existe e está atualizado";
     }
 
-    $posts = file_get_contents($index_filename);
-
-    echo $posts;
+    echo file_get_contents($index_filename);
 
 ?>
