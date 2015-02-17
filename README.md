@@ -37,9 +37,10 @@
 - √ Search posts
 -   Use Grunt
 - √ Menu support
--   Comments System
+- √ Comments System
 -   Friendly Url
 -   Add loading when changing page
+-   Add post pagination
 
 ## Known issues
 - √ Search is not case insensitive (should be)
