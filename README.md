@@ -37,9 +37,9 @@
 - √ Search posts
 -   Use Grunt
 - √ Menu support
-- • Comments System
+-   Comments System
 -   Friendly Url
 -   Add loading when changing page
 
 ## Known issues
-- Search is not case insensitive (should be)
+- √ Search is not case insensitive (should be)

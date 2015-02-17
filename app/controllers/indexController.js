@@ -10,6 +10,7 @@ function indexController ($scope, $rootScope, $routeParams, $location, config, c
     $scope.siteDescription = config.siteDescription;
     $scope.theme = config.theme;
     $scope.location = $location;
+    $scope.disqusShortname = config.disqusShortname;
 
     //loading categories
     categoryService.list(function(categories){

@@ -8,6 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- <base href="./"> -->
 
+    <!-- Theme Styles -->
+    <link  href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link ng-href="app/themes/{{theme}}/style.css" rel="stylesheet" type="text/css">
+    <link ng-href="app/themes/{{theme}}/style-custom.css" rel="stylesheet" type="text/css">
+
   <!-- Libraries -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/angular/angular.min.js"></script>
@@ -34,20 +39,14 @@
   <script src="app/directives/footerDirective.js"></script>
   <script src="app/directives/sidebarDirective.js"></script>
   <script src="app/directives/menuDirective.js"></script>
+    <script src="app/directives/commentDirective.js"></script>
 
 
   <script src="app/services/postService.js"></script>
   <script src="app/services/categoryService.js"></script>
   <script src="app/services/service.js"></script>
 
-
-  <!-- Theme Styles -->
-  <link  href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link ng-href="app/themes/{{theme}}/style.css" rel="stylesheet" type="text/css">
-  <link ng-href="app/themes/{{theme}}/style-custom.css" rel="stylesheet" type="text/css">
-
   <!--<script src="http://phoenixcms.disqus.com/embed.js"></script>-->
-
 
   <title>{{siteName}}</title>
 </head>

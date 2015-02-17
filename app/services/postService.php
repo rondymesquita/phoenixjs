@@ -7,8 +7,6 @@ function stripAccents($str) {
 
 }
 
-//    $search = $_REQUEST["search"];
-
     $index_filename = '../../content/posts/_index.json';
     $hash_filename  = '../../content/posts/_hash';
     $posts_filename = '../../content/posts/posts.json';
@@ -45,7 +43,6 @@ function stripAccents($str) {
 
     $posts = file_get_contents($index_filename);
 
-//    echo json_encode($posts, JSON_UNESCAPED_UNICODE);
     echo $posts;
 
 ?>

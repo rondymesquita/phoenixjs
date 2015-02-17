@@ -1,6 +1,6 @@
-angular.module('PhoenixCMS').directive('menu',['config','$sce', menu]);
+angular.module('PhoenixCMS').directive('menu',['config','$sce', menuDirective]);
 
-function menu(config,$sce){
+function menuDirective(config,$sce){
     return {
         restrict: 'E',
         templateUrl: 'app/themes/'+config.theme+'/menus/menu.html',

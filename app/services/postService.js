@@ -77,7 +77,6 @@ function postService($http, config) {
             url: serviceUrl,
             cache: true
         }).success(function (data){
-            console.log(data);
             callback(data[id-1]);
         });
 
