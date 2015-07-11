@@ -4,6 +4,10 @@ function categoryService($http, config) {
 
     var postsLocation = 'content/posts/posts.json';
 
+    /*
+     * List categories from all posts
+     *
+     */
     this.list = function(callback){
 
         var categories = [];

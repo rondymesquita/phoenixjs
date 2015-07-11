@@ -2,6 +2,7 @@ angular.module('PhoenixCMS').service('Service', ['$http', 'config', service]);
 
 function service($http, config) {
 
+    //Do a generic GET request
     this.get = function(url, success, error){
 
         $http({
