@@ -30,6 +30,13 @@ function routesConfig($routeProvider, $locationProvider, config) {
         controller  : 'PostBySearchController',
     })
 
+    .when('/page/:name', {
+        templateUrl : function(urlattr){
+            return 'app/themes/' + config.theme + '/pages/view.html'
+        },
+        controller  : 'PageViewController',
+    })
+
     .otherwise({
         templateUrl : 'app/themes/' + config.theme + '/pages/404.html',
     });

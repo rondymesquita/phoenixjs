@@ -10,7 +10,7 @@ function postService($http, config) {
     }
 
     // Generate a friendly url to post
-    function generatePostUrl(post){
+    function generateFriendlyUrl(post){
         return post.title.replace(/ /g,"-").toLowerCase();
     };
 
@@ -30,9 +30,8 @@ function postService($http, config) {
 
             $.each(data, function(index, value){
                 //create friendly url
-                data[index]["url"] = generatePostUrl(data[index]);
+                data[index]["url"] = generateFriendlyUrl(data[index]);
                 posts.push(data[index]);
-
             });
 
             callback(posts);
@@ -54,7 +53,7 @@ function postService($http, config) {
 
             $.each(data, function(index, value){
                 //create friendly url
-                data[index]["url"] = generatePostUrl(data[index]);
+                data[index]["url"] = generateFriendlyUrl(data[index]);
 
                 //get post by categories
                 for(var i = 0; i < data[index].categories.length; i++){
