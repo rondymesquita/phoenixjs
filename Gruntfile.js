@@ -11,7 +11,7 @@ module.exports = function(grunt) {
                     'phoenixjs/app/controllers/controllers.min.js': ['app/controllers/*.js'],
                     'phoenixjs/app/directives/directives.min.js': ['app/directives/*.js'],
                     'phoenixjs/app/services/services.min.js': ['app/services/*.js'],
-                    'phoenixjs/app/app.min.js': ['app/app.module.js','app/app.route.js'],
+                    'phoenixjs/app/app.min.js': ['app/app.module.js','app/app.routes.js'],
 
                     // 'phoenixjs/app/libraries/libraries.min.js': [
                     //     'bower_components/jquery/dist/jquery.min.js',
@@ -39,6 +39,8 @@ module.exports = function(grunt) {
             main: {
                 files: [
                 {src: 'app/config.js', dest: 'phoenixjs/'},
+                // {src: 'app/app.module.js', dest: 'phoenixjs/'},
+                // {src: 'app/app.routes.js', dest: 'phoenixjs/'},
                 {src: 'posts/**/*', dest: 'phoenixjs/'},
                 {src: 'app/themes/**/*', dest: 'phoenixjs/'},
                 {src: 'bower_components/**/*', dest: 'phoenixjs/'},

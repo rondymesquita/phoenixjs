@@ -9,5 +9,8 @@
     "grunt-duplicate": "^0.1.2",
     "grunt-mkdir": "^0.1.2",
     "grunt-preprocess": "^4.1.0"
+  },
+  "dependencies": {
+    "grunt-env": "^0.4.2"
   }
 }

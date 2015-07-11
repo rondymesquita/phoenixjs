@@ -9,6 +9,7 @@ function postViewController($scope, $rootScope, $http, $routeParams, postService
 
     postService.getById($scope.routeParams.id, function(post){
         $scope.post = post;
+        $rootScope.post = post;
         console.log("View Post");
     });
 

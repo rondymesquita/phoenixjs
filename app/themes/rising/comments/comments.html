@@ -5,6 +5,9 @@
     var $element = $("#disqus_thread");
     var scope = angular.element($element).scope();
     var disqus_shortname = scope.disqusShortname;
+    var disqus_identifier = scope.post.url; //'a unique identifier for each page where Disqus is present';
+    var disqus_title = scope.post.title; //'a unique title for each page where Disqus is present';
+    var disqus_url = '#post/'+scope.post.id+'/'+scope.post.url;//'a unique URL for each page where Disqus is present';
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
@@ -12,5 +15,17 @@
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
+
+    document.ready = function(){
+        DISQUS.reset({
+          reload: true,
+          config: function () {  
+            this.page.identifier = scope.post.url;//"newidentifier";  
+            this.page.url = '#post/'+scope.post.id+'/'+scope.post.url;      //"http://example.com/#!newthread";
+          }
+        });    
+    }
+    
+
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
