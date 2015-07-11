@@ -2,7 +2,7 @@ angular.module('PhoenixCMS').service('CategoryService', ['$http', 'config', cate
 
 function categoryService($http, config) {
 
-    var serviceUrl = 'app/services/postService.php';
+    var postsLocation = 'content/posts/posts.json';
 
     this.list = function(callback){
 
@@ -10,7 +10,7 @@ function categoryService($http, config) {
 
         $http({
             method:'GET',
-            url:  serviceUrl,
+            url:  postsLocation,
             cache: true
         }).success(function (posts){
 
