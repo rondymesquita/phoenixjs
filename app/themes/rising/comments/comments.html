@@ -1,31 +1,14 @@
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+<div id="comments">
+<script>
+var $element = $("#comments");
+var scope = angular.element($element).scope();
 
-    var $element = $("#disqus_thread");
-    var scope = angular.element($element).scope();
-    var disqus_shortname = scope.disqusShortname;
-    var disqus_identifier = scope.post.url; //'a unique identifier for each page where Disqus is present';
-    var disqus_title = scope.post.title; //'a unique title for each page where Disqus is present';
-    var disqus_url = '#post/'+scope.post.id+'/'+scope.post.url;//'a unique URL for each page where Disqus is present';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-
-    document.ready = function(){
-        DISQUS.reset({
-          reload: true,
-          config: function () {  
-            this.page.identifier = scope.post.url;//"newidentifier";  
-            this.page.url = '#post/'+scope.post.id+'/'+scope.post.url;      //"http://example.com/#!newthread";
-          }
-        });    
-    }
-    
+var idcomments_acct = '4fb72a3cc0a3dd8ee583e406d41ddafe';
+var idcomments_post_id  = "/post/"+scope.post.id+"/"+scope.post.url;
+var idcomments_post_url = "/post/"+scope.post.id+"/"+scope.post.url;
 
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<span id="IDCommentsPostTitle" style="display:none"></span>
+<script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+</div>

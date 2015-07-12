@@ -80,6 +80,10 @@ function postService($http, config) {
             url: postsLocation,
             cache: true
         }).success(function (data){
+            $.each(data, function(index, value){
+                //create friendly url
+                data[index]["url"] = generateFriendlyUrl(data[index]);
+            });
             callback(data[id-1]);
         });
 
