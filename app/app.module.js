@@ -1,7 +1,7 @@
 angular
 .module('PhoenixCMS', ['ngRoute','btford.markdown'])
 .run(function(){
-    console.log("loaded");
+    //console.log("Loaded");
 }).config(function($httpProvider){
     $httpProvider.interceptors.push(interceptor);
 });

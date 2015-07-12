@@ -1,14 +1,12 @@
 <div id="comments">
 <script>
-var $element = $("#comments");
-var scope = angular.element($element).scope();
+  var $element = $("#comments");
+  var scope = angular.element($element).scope();
 
-var idcomments_acct = '4fb72a3cc0a3dd8ee583e406d41ddafe';
-var idcomments_post_id  = "/post/"+scope.post.id+"/"+scope.post.url;
-var idcomments_post_url = "/post/"+scope.post.id+"/"+scope.post.url;
-
+  var idcomments_acct = scope.intenseDebateAcct;
+  var idcomments_post_id  = scope.intenseDebateId;
+  var idcomments_post_url = scope.intenseDebateUrl;
 </script>
-
 <span id="IDCommentsPostTitle" style="display:none"></span>
 <script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 </div>

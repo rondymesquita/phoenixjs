@@ -1,7 +1,7 @@
 
-angular.module('PhoenixCMS').controller('PostViewController', ['$scope', '$rootScope', '$http', '$routeParams','PostService','Service', postViewController]);
+angular.module('PhoenixCMS').controller('PostViewController', ['$scope', '$rootScope', '$http', '$routeParams','config','PostService','Service', postViewController]);
 
-function postViewController($scope, $rootScope, $http, $routeParams, postService, service) {
+function postViewController($scope, $rootScope, $http, $routeParams, config, postService, service) {
 
     $scope.title = "Posts";
     $scope.post = [];
@@ -12,7 +12,13 @@ function postViewController($scope, $rootScope, $http, $routeParams, postService
         $rootScope.post = post;
         service.get('content/posts/' + $scope.routeParams.id + '.' + post.type, function(data, status){
           $scope.post.content = data;
-        })
+        });
+
+        $scope.intenseDebateAcct = config.intenseDebateAcct;
+        $scope.intenseDebateId = "/post/"+$scope.post.id+"/"+$scope.post.url;
+        $scope.intenseDebateUrl = "/post/"+$scope.post.id+"/"+$scope.post.url;
+
+
     });
 
 }
