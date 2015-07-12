@@ -11,16 +11,19 @@ function indexController ($scope, $rootScope, $routeParams, $location, config, c
     $scope.theme = config.theme;
     $scope.location = $location;
     $scope.disqusShortname = config.disqusShortname;
+    $scope.pagItemsPerPage = config.pagItemsPerPage;
 
-    //loading categories
+    //Load categories
     categoryService.list(function(categories){
         $scope.categories = categories;
     });
 
+    //Load menu
     service.get('content/menus/menu.json',function(data){
         $scope.menuLinks = data;
     });
 
+    //Config menu navigation
     $scope.isActive = function(item) {
       if (item.url == "#"+$location.path()) {
         return true;
@@ -28,6 +31,7 @@ function indexController ($scope, $rootScope, $routeParams, $location, config, c
       return false;
     };
 
+    //Add Search support
     $scope.searchPosts = function(search){
         $location.path("/search/"+search);
     }
@@ -56,6 +60,8 @@ function indexController ($scope, $rootScope, $routeParams, $location, config, c
         }
     ];
 
-
+    $scope.pageChangeHandler = function(num) {
+      window.scrollTo(0, 0);
+    };
 
 }

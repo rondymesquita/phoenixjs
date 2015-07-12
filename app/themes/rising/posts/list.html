@@ -3,11 +3,11 @@
 
 <div class="container-fluid">
 
-
     <div class="row">
 
         <div class="col-md-8">
-            <section ng-repeat="post in posts" class="post-content">
+
+            <section  dir-paginate="post in posts | itemsPerPage: pagItemsPerPage" class="post-content">
                 <article class="row">
                     <div class="col-md-12">
 
@@ -20,6 +20,9 @@
                 </article>
                 <hr>
             </section>
+
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
+
         </div>
         <div class="col-md-3 col-md-offset-1">
             <sidebar></sidebar>

@@ -20,9 +20,6 @@ function postService($http, config) {
             cache: true
         }).success(function (data){
 
-            console.log("Posts: ");
-            console.log(data);
-
             $.each(data, function(index, value){
                 //create friendly url
                 data[index]["url"] = GenerateFriendlyUrl(data[index]);

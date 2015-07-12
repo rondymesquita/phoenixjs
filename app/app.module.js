@@ -1,9 +1,10 @@
 angular
-.module('PhoenixCMS', ['ngRoute','btford.markdown'])
+.module('PhoenixCMS', ['ngRoute','btford.markdown','angularUtils.directives.dirPagination'])
 .run(function(){
     //console.log("Loaded");
-}).config(function($httpProvider){
+}).config(function($httpProvider, paginationTemplateProvider, config){
     $httpProvider.interceptors.push(interceptor);
+    paginationTemplateProvider.setPath(config.pagTemplate);
 });
 
 
@@ -31,7 +32,7 @@ function EncodeString(s){
     return r.toLowerCase();
 };
 
-// Generate a friendly url to post
+// Generate a friendly url to post based on title
 function GenerateFriendlyUrl(post){
     return post.title.replace(/ /g,"-").toLowerCase();
 };

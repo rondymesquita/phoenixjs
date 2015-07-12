@@ -122,3 +122,11 @@ section img,
 .text-center{
     text-align:center;
 }
+dir-pagination-controls li.active a{
+  background-color: #b42224 !important;
+  border-color: #b42224 !important;
+  color:#fff !important;
+}
+dir-pagination-controls li a{
+  color: #b42224 !important;
+}
