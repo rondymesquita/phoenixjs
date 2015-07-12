@@ -4,11 +4,6 @@ function pageService($http, config) {
 
     var pagesLocation = 'content/pages/pages.json';
 
-    // Generate a friendly url to post
-    function generateFriendlyUrl(post){
-        return post.title.replace(/ /g,"-").toLowerCase();
-    };
-
     //Get a page by Id
     this.getByName= function(name, callback){
 
@@ -22,7 +17,7 @@ function pageService($http, config) {
 
             $.each(data, function(index, value){
                 //create friendly url
-                data[index]["url"] = generateFriendlyUrl(data[index]);
+                data[index]["url"] = GenerateFriendlyUrl(data[index]);
 
                 if(name === data[index]["url"]){
                     page = data[index];

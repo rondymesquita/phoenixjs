@@ -9,11 +9,6 @@ function postService($http, config) {
         this.categories = [];
     }
 
-    // Generate a friendly url to post
-    function generateFriendlyUrl(post){
-        return post.title.replace(/ /g,"-").toLowerCase();
-    };
-
     //List all posts
     this.list = function(callback){
 
@@ -30,7 +25,7 @@ function postService($http, config) {
 
             $.each(data, function(index, value){
                 //create friendly url
-                data[index]["url"] = generateFriendlyUrl(data[index]);
+                data[index]["url"] = GenerateFriendlyUrl(data[index]);
                 posts.push(data[index]);
             });
 
@@ -53,7 +48,7 @@ function postService($http, config) {
 
             $.each(data, function(index, value){
                 //create friendly url
-                data[index]["url"] = generateFriendlyUrl(data[index]);
+                data[index]["url"] = GenerateFriendlyUrl(data[index]);
 
                 //get post by categories
                 for(var i = 0; i < data[index].categories.length; i++){
@@ -82,7 +77,7 @@ function postService($http, config) {
         }).success(function (data){
             $.each(data, function(index, value){
                 //create friendly url
-                data[index]["url"] = generateFriendlyUrl(data[index]);
+                data[index]["url"] = GenerateFriendlyUrl(data[index]);
             });
             callback(data[id-1]);
         });
@@ -102,15 +97,21 @@ function postService($http, config) {
             cache: true,
         }).success(function(posts){
 
+            //Each post
             $.each(posts, function(index, value){
 
                 var insertThisPost = false;
 
-                $.each(posts[index], function(index, value){
+                //Each post attribute
+                $.each(posts[index], function(jndex, value){
 
                     value = EncodeString(value);
-                    if(value.indexOf(search) != -1)
+
+                    if(value.indexOf(search) != -1){
                         insertThisPost = true;
+                        posts[index]["url"] = GenerateFriendlyUrl(posts[index]);
+                    }
+
                 });
 
                 if(insertThisPost)
