@@ -85,7 +85,7 @@ function GetPosts(posts, search){
     var result = [];
     $.each(posts, function(index, value){
         posts[index]["url"] = GenerateFriendlyUrl(posts[index]);
-        result.push(data[index]);
+        result.push(posts[index]);
     });
     return result;
 }
