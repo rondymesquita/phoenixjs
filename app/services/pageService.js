@@ -7,24 +7,13 @@ function pageService($http, config) {
     //Get a page by Id
     this.getByName= function(name, callback){
 
-        var page = {};
-
         $http({
             method:'GET',
             url: pagesLocation,
             cache: true
-        }).success(function (data){
+        }).success(function (pages){
 
-            $.each(data, function(index, value){
-                //create friendly url
-                data[index]["url"] = GenerateFriendlyUrl(data[index]);
-
-                if(name === data[index]["url"]){
-                    page = data[index];
-                    return false;
-                }
-
-            });
+            var page = GetPageByTitle(pages, name);
             callback(page);
 
         });

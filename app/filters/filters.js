@@ -1,4 +1,7 @@
-//Filter to list posts by category
+
+/*
+ * Filter to list posts by category
+ */
 angular.module('PhoenixCMS').filter('byCategory',byCategoryFilter);
 
 function byCategoryFilter(config) {

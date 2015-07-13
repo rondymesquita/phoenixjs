@@ -105,3 +105,20 @@ function GetCategories(posts){
     });
     return categories;
 }
+
+/*
+ * Get page by given title
+ */
+function GetPageByTitle(pages, title){
+    var page = {};
+    $.each(pages, function(index, value){
+        pages[index]["url"] = GenerateFriendlyUrl(pages[index]);
+
+        if(title === pages[index]["url"]){
+            page = pages[index];
+            return false;
+        }
+
+    });
+    return page;
+}

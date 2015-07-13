@@ -9,7 +9,6 @@ function pageViewController($scope, $rootScope, $http, $routeParams, pageService
     pageService.getByName($scope.routeParams.name, function(page){
         $scope.page = page;
         $rootScope.page = page;
-        console.log(page);
         service.get('content/pages/' + $scope.routeParams.name + '.' + page.type, function(data, status){
           $scope.page.content = data;
         })
