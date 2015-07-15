@@ -5,7 +5,14 @@ function routesConfig($routeProvider, $locationProvider, config) {
     $routeProvider
 
     .when('/', {
-        templateUrl : 'app/themes/' + config.theme + '/posts/list.html',
+        templateUrl : function(urlattr){
+            if(config.indexPage){
+                return 'content/pages/static_pages/'  + config.indexPage;
+            }else{
+                return 'app/themes/' + config.theme + '/posts/list.html';
+            }
+
+        },
         controller  : 'PostListController'
     })
 
@@ -32,6 +39,7 @@ function routesConfig($routeProvider, $locationProvider, config) {
 
     .when('/page/:name', {
         templateUrl : function(urlattr){
+            console.log(urlattr);
             return 'app/themes/' + config.theme + '/pages/view.html'
         },
         controller  : 'PageViewController',
