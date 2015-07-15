@@ -44,16 +44,19 @@
 The structure is simple:
 
  - **app**
-     - **index.html** (the root file)
-     - **app.module.js**  (the core of phoenix js) (Module configuration)
-     - **app.routes.js** (All routes used in phoenix)
-     - **config.js** (The configurations of your site. You can customize some attributes)
-     - **controllers** (folder containing controllers)
-      - **directives** (folder containing directives)
-      - **filters** (folder containing filters)
-      - **functions** (folder containing common functions)
-      - **services** (folder containing services)
-      - **themes** (where the themes are installed)
+	- **components**
+		- **app.module.js**  (the core of phoenix js) (Module configuration)
+		- **app.routes.js** (All routes used in phoenix)
+		- **controllers** (folder containing controllers)
+		- **directives** (folder containing directives)
+		- **filters** (folder containing filters)
+		- **functions** (folder containing common functions)
+		- **services** (folder containing services)
+	- **themes** (where the themes are installed)
+	- **index.html** (the root file)
+	- **config.js** (The configurations of your site. You can customize some attributes. Used inside the controllers, directives, filters, routes, functions and services)
+	- **constants.js** (The constants to be used inside theme html files)
+
 
 You don't need to worry about controllers, directives, filters, functions and services. They are ready to work for you. You just need create your content folder, put the content inside, choose (or create) your theme and you site is ready.
 Of course, feel free to change any file and customize your experience.
@@ -68,12 +71,14 @@ You create a folder **content** sibling **app** folder like.
  - **content**
      - **menus** (menus)
      - **pages** (pages)
-         - **example.md**
-         - **pages.json**
+         - **example.md** (a markdown page)
+         - **pages.json** (pages index)
+         - **static_pages** (the static pages)
+	         - **custom_index.html** (the custom index page)
      - **posts** (posts)
          - **1.md** (a markdown post)
          - **2.html** (a html post)
-         - **posts.json** (post index)
+         - **posts.json** (posts index)
          - **images** (the images folder of posts)
 
 ###Posts.json
@@ -118,12 +123,11 @@ To your post file, your take the **id** of your post and the **type**: **[id].[t
 ##Config.js file
 The **config.js** is a constant angularjs file where the configuration attributes are declared.
 ```
-    siteName: 'PhoenixJS',
-    siteDescription: 'Simple CMS AngularJS Based',
     theme: 'rising',
     intenseDebateAcct: '4fb72a3cc0a3dd8ee583e406d41ddafe',
     pagTemplate: 'bower_components/angular-utils-pagination/dirPagination.tpl.html',
     pagItemsPerPage: 2,
+    indexPage: 'custom_index.html',
 ```
 
  - **siteName**: the site name
@@ -132,6 +136,7 @@ The **config.js** is a constant angularjs file where the configuration attribute
  - **intenseDebateAcct**: the id of IntenseDebate to add comments to posts
  - **pagTemplate**: the template of pagination
  - **pagItemsPerPage**: how many posts are displayed per page on pagination
+ - **indexPage**: the custom index page. You declare the file name to be the index of site. The file must be in **content/pages/static_pages** Otherwise, comment or remove the property and will be used de default view listing the posts.
 
 ##Pagination
 To add pagination support was used the directive **pagination** from
@@ -148,5 +153,3 @@ To add pagination support was used the directive **pagination** from
 
 ## Known issues
 - √ Search is not case insensitive (should be)
-
-
