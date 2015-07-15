@@ -99,14 +99,15 @@ This is an example of **posts.json** file. Is an array with all posts.
     ,
     ...]
 ```
-**id**: the id of post
-**title**: the title of post
-**excerpt**: the excerpt of post. Is displayed on list and seach result
-**image**:  the featured image of post
-**categories**: an array of categories of post
-**author**: name of author
-**date**: date
-**type**: type of your posts. You can choose "**md**" or "**html**"
+
+ - **id**: the id of post
+ - **title**: the title of post
+ - **excerpt**: the excerpt of post. Is displayed on list and seach result
+ - **image**:  the featured image of post
+ - **categories**: an array of categories of post
+ - **author**: name of author
+ - **date**: date
+ - **type**: type of your posts. You can choose "**md**" or "**html**"
 
 ###Post file
 To your post file, your take the **id** of your post and the **type**: **[id].[type]**
@@ -124,12 +125,13 @@ The **config.js** is a constant angularjs file where the configuration attribute
     pagTemplate: 'bower_components/angular-utils-pagination/dirPagination.tpl.html',
     pagItemsPerPage: 2,
 ```
-**siteName**: the site name
-**siteDescription**: description
-**theme**: the folder name of theme
-**intenseDebateAcct**: the id of IntenseDebate to add comments to posts
-**pagTemplate**: the template of pagination
-**pagItemsPerPage**: how many posts are displayed per page on pagination
+
+ - **siteName**: the site name
+ - **siteDescription**: description
+ - **theme**: the folder name of theme
+ - **intenseDebateAcct**: the id of IntenseDebate to add comments to posts
+ - **pagTemplate**: the template of pagination
+ - **pagItemsPerPage**: how many posts are displayed per page on pagination
 
 ##Pagination
 To add pagination support was used the directive **pagination** from
