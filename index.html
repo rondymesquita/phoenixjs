@@ -29,7 +29,9 @@
       <div class="inner clearfix">
         <section id="main-content">
           <h1>
-<a id="phoenix-cms" class="anchor" href="#phoenix-cms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Phoenix CMS</h1>
+<a id="phoenixjs" class="anchor" href="#phoenixjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>PhoenixJS</h1>
+
+<p><a href="http://rondymesquita.github.io/#/">Preview here!</a></p>
 
 <h2>
 <a id="proposal" class="anchor" href="#proposal" aria-hidden="true"><span class="octicon octicon-link"></span></a>Proposal</h2>
@@ -39,15 +41,284 @@
 <li>Build on top of AngularJS, you can create your posts using markdown language.</li>
 <li>Create templates using HTML and CSS.</li>
 <li>Extend with AngularJS</li>
+<li>Create your own themes</li>
 </ul>
 
-<h3>
-<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h3>
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
 
 <ul>
 <li>Bower</li>
-<li>AngularJS</li>
-<li>JQuery</li>
+<li>Dependencies declared in bower.json</li>
+</ul>
+
+<h2>
+<a id="build" class="anchor" href="#build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build</h2>
+
+<ul>
+<li>Install NodeJS</li>
+<li>Install npm</li>
+<li>Install Bower</li>
+<li>
+<p>Enter in Phoenixjs folder and execute:</p>
+
+<pre><code>bower install
+</code></pre>
+</li>
+</ul>
+
+<h2>
+<a id="theme-sctructure" class="anchor" href="#theme-sctructure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Theme sctructure</h2>
+
+<ul>
+<li>Put themes in <strong>app/themes</strong> folder following the structure
+
+<ul>
+<li>[THEME-NAME]
+
+<ul>
+<li>--- <strong>comments</strong> (directive view for comments)
+
+<ul>
+<li>--- <strong>comments.html</strong> (default view for comments)</li>
+</ul>
+</li>
+<li>--- <strong>footer</strong> (directive view for footer)
+
+<ul>
+<li>--- <strong>footer.html</strong> (default view for footer)</li>
+</ul>
+</li>
+<li>--- <strong>header</strong> (directive view for header)
+
+<ul>
+<li>--- <strong>header.html</strong> (default view for header)</li>
+</ul>
+</li>
+<li>--- <strong>posts</strong> (contains the views for any PostController)
+
+<ul>
+<li>--- <strong>view.html</strong> (view the post)</li>
+<li>--- <strong>list.html</strong> (list all posts)</li>
+<li>--- <strong>byCategory.html</strong> (list posts by category)</li>
+<li>--- <strong>bySearch.html</strong> (lists posts based on search/search result)</li>
+</ul>
+</li>
+<li>--- <strong>sidebar</strong> (directive for sidebars)
+
+<ul>
+<li>--- <strong>sidebar.html</strong> (view for sidebars)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a id="structure" class="anchor" href="#structure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Structure</h2>
+
+<p>The structure is simple:</p>
+
+<ul>
+<li>
+<strong>app</strong>
+
+<ul>
+<li>
+<strong>components</strong>
+
+<ul>
+<li>
+<strong>app.module.js</strong>  (the core of phoenix js) (Module configuration)</li>
+<li>
+<strong>app.routes.js</strong> (All routes used in phoenix)</li>
+<li>
+<strong>controllers</strong> (folder containing controllers)</li>
+<li>
+<strong>directives</strong> (folder containing directives)</li>
+<li>
+<strong>filters</strong> (folder containing filters)</li>
+<li>
+<strong>functions</strong> (folder containing common functions)</li>
+<li>
+<strong>services</strong> (folder containing services)</li>
+</ul>
+</li>
+<li>
+<strong>themes</strong> (where the themes are installed)</li>
+<li>
+<strong>index.html</strong> (the root file)</li>
+<li>
+<strong>config.js</strong> (The configurations of your site. You can customize some attributes. Used inside the controllers, directives, filters, routes, functions and services)</li>
+<li>
+<strong>constants.js</strong> (The constants to be used inside theme html files)</li>
+</ul>
+</li>
+</ul>
+
+<p>You don't need to worry about controllers, directives, filters, functions and services. They are ready to work for you. You just need create your content folder, put the content inside, choose (or create) your theme and you site is ready.
+Of course, feel free to change any file and customize your experience.
+The <strong>index.html</strong> is the root file where all dependencies are linked. So, you can add any css or js file to your site.</p>
+
+<h2>
+<a id="content" class="anchor" href="#content" aria-hidden="true"><span class="octicon octicon-link"></span></a>Content</h2>
+
+<p>The content is based on a json file that works like a index for posts meta and markdown and html file for post content. So, you don't need any database.</p>
+
+<p>You create a folder <strong>content</strong> sibling <strong>app</strong> folder like.</p>
+
+<ul>
+<li><strong>app</strong></li>
+<li>
+<strong>content</strong>
+
+<ul>
+<li>
+<strong>menus</strong> (menus)</li>
+<li>
+<strong>pages</strong> (pages)
+
+<ul>
+<li>
+<strong>example.md</strong> (a markdown page)</li>
+<li>
+<strong>pages.json</strong> (pages index)</li>
+<li>
+<strong>static_pages</strong> (the static pages)
+
+<ul>
+<li>
+<strong>custom_index.html</strong> (the custom index page)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<strong>posts</strong> (posts)
+
+<ul>
+<li>
+<strong>1.md</strong> (a markdown post)</li>
+<li>
+<strong>2.html</strong> (a html post)</li>
+<li>
+<strong>posts.json</strong> (posts index)</li>
+<li>
+<strong>images</strong> (the images folder of posts)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<a id="postsjson" class="anchor" href="#postsjson" aria-hidden="true"><span class="octicon octicon-link"></span></a>Posts.json</h3>
+
+<p>This is an example of <strong>posts.json</strong> file. Is an array with all posts.</p>
+
+<pre><code>    [{
+        "id": "1",
+        "title": "The Empire Strikes Back",
+        "excerpt": "Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force. Remember, a Jedi can feel the Force flowing through him. Look, I ain't in this for your revolution, and I'm not in it for you, Princess. I expect to be well paid.",
+        "image":"content/posts/images/starwars_the_empire_strikes_back.jpg",
+        "categories": [
+            "star-wars", "the-empire-strikes-back","movies"
+        ],
+        "tags":[
+            "lorem","ipsum"
+        ],
+        "author":"Rondy Mesquita",
+        "date":"January 28, 2015",
+        "type":"md"
+    }
+    ,
+    ...]
+</code></pre>
+
+<ul>
+<li>
+<strong>id</strong>: the id of post</li>
+<li>
+<strong>title</strong>: the title of post</li>
+<li>
+<strong>excerpt</strong>: the excerpt of post. Is displayed on list and seach result</li>
+<li>
+<strong>image</strong>:  the featured image of post</li>
+<li>
+<strong>categories</strong>: an array of categories of post</li>
+<li>
+<strong>author</strong>: name of author</li>
+<li>
+<strong>date</strong>: date</li>
+<li>
+<strong>type</strong>: type of your posts. You can choose "<strong>md</strong>" or "<strong>html</strong>"</li>
+</ul>
+
+<h3>
+<a id="post-file" class="anchor" href="#post-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Post file</h3>
+
+<p>To your post file, your take the <strong>id</strong> of your post and the <strong>type</strong>: <strong>[id].[type]</strong></p>
+
+<ul>
+<li>1.md</li>
+<li>2.html</li>
+</ul>
+
+<h2>
+<a id="configjs-file" class="anchor" href="#configjs-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Config.js file</h2>
+
+<p>The <strong>config.js</strong> is a constant angularjs file where the configuration attributes are declared.</p>
+
+<pre><code>    theme: 'rising',
+    intenseDebateAcct: '4fb72a3cc0a3dd8ee583e406d41ddafe',
+    pagTemplate: 'bower_components/angular-utils-pagination/dirPagination.tpl.html',
+    pagItemsPerPage: 2,
+    indexPage: 'custom_index.html',
+</code></pre>
+
+<ul>
+<li>
+<strong>siteName</strong>: the site name</li>
+<li>
+<strong>siteDescription</strong>: description</li>
+<li>
+<strong>theme</strong>: the folder name of theme</li>
+<li>
+<strong>intenseDebateAcct</strong>: the id of IntenseDebate to add comments to posts</li>
+<li>
+<strong>pagTemplate</strong>: the template of pagination</li>
+<li>
+<strong>pagItemsPerPage</strong>: how many posts are displayed per page on pagination</li>
+<li>
+<strong>indexPage</strong>: the custom index page. You declare the file name to be the index of site. The file must be in <strong>content/pages/static_pages</strong> Otherwise, comment or remove the property and will be used de default view listing the posts.</li>
+</ul>
+
+<h2>
+<a id="pagination" class="anchor" href="#pagination" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pagination</h2>
+
+<p>To add pagination support was used the directive <strong>pagination</strong> from
+<a href="https://github.com/michaelbromley/angularUtils">https://github.com/michaelbromley/angularUtils</a>. You can customize the directive reading the doc.</p>
+
+<h2>
+<a id="working-on-features" class="anchor" href="#working-on-features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Working on features</h2>
+
+<ul>
+<li>√ Support both HTML and Markdown posts</li>
+<li>√ Search posts</li>
+<li>  Use Grunt</li>
+<li>√ Menu support</li>
+<li>√ Comments System</li>
+<li>  Add loading when changing page</li>
+<li>√ Add post pagination</li>
+</ul>
+
+<h2>
+<a id="known-issues" class="anchor" href="#known-issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Known issues</h2>
+
+<ul>
+<li>√ Search is not case insensitive (should be)</li>
 </ul>
         </section>
 
