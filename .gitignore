@@ -4,3 +4,4 @@ phoenixjs/**/*
 **/_*
 .idea/*
 **/*.log
+**/*.DS_Store
