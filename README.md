@@ -110,9 +110,30 @@ This is an example of **posts.json** file. Is an array with all posts.
 
 ###Post file
 To your post file, your take the **id** of your post and the **type**: **[id].[type]**
-1.md
-2.html
 
+ - 1.md
+ - 2.html
+
+##Config.js file
+The **config.js** is a constant angularjs file where the configuration attributes are declared.
+```
+    siteName: 'PhoenixJS',
+    siteDescription: 'Simple CMS AngularJS Based',
+    theme: 'rising',
+    intenseDebateAcct: '4fb72a3cc0a3dd8ee583e406d41ddafe',
+    pagTemplate: 'bower_components/angular-utils-pagination/dirPagination.tpl.html',
+    pagItemsPerPage: 2,
+```
+**siteName**: the site name
+**siteDescription**: description
+**theme**: the folder name of theme
+**intenseDebateAcct**: the id of IntenseDebate to add comments to posts
+**pagTemplate**: the template of pagination
+**pagItemsPerPage**: how many posts are displayed per page on pagination
+
+##Pagination
+To add pagination support was used the directive **pagination** from
+[https://github.com/michaelbromley/angularUtils](https://github.com/michaelbromley/angularUtils). You can customize the directive reading the doc.
 
 ## Working on features
 - √ Support both HTML and Markdown posts
@@ -125,3 +146,5 @@ To your post file, your take the **id** of your post and the **type**: **[id].[t
 
 ## Known issues
 - √ Search is not case insensitive (should be)
+
+
