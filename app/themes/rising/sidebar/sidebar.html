@@ -1,9 +1,9 @@
 <div class="search-sidebar">
     <h4>
-        Search
+        {{constants.search}}
     </h4>
     <form id="form-search" ng-submit="searchPosts(search)">
-        <input type="search" class="form-control" ng-model="search" placeholder="Type your search and hit enter"/>
+        <input type="search" class="form-control" ng-model="search" placeholder="{{constants.searchPlaceholder}}"/>
     </form>
 </div>
 

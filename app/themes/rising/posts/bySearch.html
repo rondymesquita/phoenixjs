@@ -5,8 +5,8 @@
 
     <div class="row sub-header">
         <div class="col-xs-12">
-            <h2 ng-show="posts.length > 0">Search results for: {{search}}</h2>
-            <h2 ng-show="posts.length == 0">No result matches with search: {{search}}</h2>
+            <h2 ng-show="posts.length > 0">{{constants.searchResultTitle}} {{search}}</h2>
+            <h2 ng-show="posts.length == 0">{{constants.searchEmptyResultTitle}} {{search}}</h2>
         </div>
     </div>
 
@@ -27,7 +27,7 @@
             </section>
 
             <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
-            
+
         </div>
         <div class="col-md-3 col-md-offset-1">
             <sidebar></sidebar>

@@ -1,16 +1,15 @@
 
 angular
     .module('PhoenixCMS')
-    .controller('IndexController', ['$scope', '$rootScope','$routeParams', '$location', 'config','CategoryService','PostService', 'Service', indexController]);
+    .controller('IndexController', ['$scope', '$rootScope','$routeParams', '$location', 'config','constants','CategoryService','PostService', 'Service', indexController]);
 
-function indexController ($scope, $rootScope, $routeParams, $location, config, categoryService, postService, service) {
+function indexController ($scope, $rootScope, $routeParams, $location, config, constants, categoryService, postService, service) {
 
-    //loading configuration
-    $scope.siteName = config.siteName;
-    $scope.siteDescription = config.siteDescription;
-    $scope.theme = config.theme;
     $scope.location = $location;
-    $scope.disqusShortname = config.disqusShortname;
+
+    $scope.constants = constants;
+
+    $scope.theme = config.theme;
     $scope.pagItemsPerPage = config.pagItemsPerPage;
 
     //Load categories
