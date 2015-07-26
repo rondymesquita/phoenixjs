@@ -1,4 +1,4 @@
-angular.module('PhoenixCMS').directive('header',['config', headerDirective]);
+angular.module('PhoenixCMS').directive('cmsHeader',['config', headerDirective]);
 
 function headerDirective(config){
     return {

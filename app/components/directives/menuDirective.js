@@ -1,4 +1,4 @@
-angular.module('PhoenixCMS').directive('menu',['config','$sce', menuDirective]);
+angular.module('PhoenixCMS').directive('cmsMenu',['config','$sce', menuDirective]);
 
 function menuDirective(config,$sce){
     return {
