@@ -1,5 +1,5 @@
 
-angular.module('PhoenixCMS').controller('PostListController', ['$scope', '$rootScope', '$http', '$routeParams','PostService', postListController]);
+phoenix.controller('PostListController', ['$scope', '$rootScope', '$http', '$routeParams','PostService', postListController]);
 
 function postListController($scope, $rootScope, $http, $routeParams, postService) {
 

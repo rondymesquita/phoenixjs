@@ -1,4 +1,4 @@
-angular.module('PhoenixCMS').directive('cmsFooter',['config',footerDirective]);
+phoenix.directive('phxFooter',['config',footerDirective]);
 
 function footerDirective(config){
     return {

@@ -1,5 +1,5 @@
 
-angular.module('PhoenixCMS').controller('PageViewController', ['$scope', '$rootScope', '$http', '$routeParams','PageService','Service', pageViewController]);
+phoenix.controller('PageViewController', ['$scope', '$rootScope', '$http', '$routeParams','PageService','Service', pageViewController]);
 
 function pageViewController($scope, $rootScope, $http, $routeParams, pageService, service) {
 

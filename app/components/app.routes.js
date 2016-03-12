@@ -1,4 +1,4 @@
-angular.module('PhoenixCMS').config(routesConfig);
+phoenix.config(routesConfig);
 
 function routesConfig($routeProvider, $locationProvider, config) {
 

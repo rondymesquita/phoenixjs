@@ -1,4 +1,4 @@
-angular.module('PhoenixCMS').directive('cmsSidebar',['config', sidebarDirective]);
+phoenix.directive('phxSidebar',['config', sidebarDirective]);
 
 function sidebarDirective(config){
     return {

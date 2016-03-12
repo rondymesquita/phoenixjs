@@ -1,4 +1,4 @@
-angular.module('PhoenixCMS').directive('modal', ['$sce', '$http', function ($sce, $http) {
+phoenix.directive('modal', ['$sce', '$http', function ($sce, $http) {
     return {
         restrict: 'AE',
         scope: {

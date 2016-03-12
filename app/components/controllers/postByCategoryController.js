@@ -1,4 +1,4 @@
-angular.module('PhoenixCMS').controller('PostByCategoryController', ['$scope', '$rootScope', '$http', '$routeParams','PostService', postByCategoryController]);
+phoenix.controller('PostByCategoryController', ['$scope', '$rootScope', '$http', '$routeParams','PostService', postByCategoryController]);
 
 function postByCategoryController($scope, $rootScope, $http, $routeParams, postService) {
 

@@ -1,4 +1,4 @@
-angular.module('PhoenixCMS').constant('config',{
+phoenix.constant('config',{
     theme: 'rising', //theme folder name
     intenseDebateAcct: '4fb72a3cc0a3dd8ee583e406d41ddafe', //intenseDebate id
     pagTemplate: 'bower_components/angular-utils-pagination/dirPagination.tpl.html', // template for pagination

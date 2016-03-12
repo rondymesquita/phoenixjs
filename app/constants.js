@@ -1,4 +1,4 @@
-angular.module('PhoenixCMS').constant('constants',{
+phoenix.constant('constants',{
     siteName: 'PhoenixJS',
     siteDescription: 'Simple CMS AngularJS Based',
     siteFooter: '2015 - Created by Rondy Mesquita - Powered by PhoenixJS and theme Rising',

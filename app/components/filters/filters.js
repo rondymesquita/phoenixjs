@@ -2,7 +2,7 @@
 /*
  * Filter to list posts by category
  */
-angular.module('PhoenixCMS').filter('byCategory',byCategoryFilter);
+phoenix.filter('byCategory',byCategoryFilter);
 
 function byCategoryFilter(config) {
   return function(data, category){

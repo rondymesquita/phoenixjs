@@ -1,4 +1,4 @@
-angular.module('PhoenixCMS').directive('cmsComments',['config', comments]);
+phoenix.directive('phxComments',['config', comments]);
 
 function comments(config){
     return {

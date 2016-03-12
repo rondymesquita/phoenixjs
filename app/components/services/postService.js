@@ -1,4 +1,4 @@
-angular.module('PhoenixCMS').service('PostService', ['$http', 'config', postService]);
+phoenix.service('PostService', ['$http', 'config', postService]);
 
 function postService($http, config) {
 

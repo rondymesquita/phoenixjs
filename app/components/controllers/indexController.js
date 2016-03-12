@@ -1,7 +1,5 @@
 
-angular
-    .module('PhoenixCMS')
-    .controller('IndexController', ['$scope', '$rootScope','$routeParams', '$location', 'config','constants','CategoryService','PostService', 'Service', indexController]);
+phoenix.controller('IndexController', ['$scope', '$rootScope','$routeParams', '$location', 'config','constants','CategoryService','PostService', 'Service', indexController]);
 
 function indexController ($scope, $rootScope, $routeParams, $location, config, constants, categoryService, postService, service) {
 

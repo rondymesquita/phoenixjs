@@ -1,4 +1,4 @@
-angular.module('PhoenixCMS').service('CategoryService', ['$http', 'config', categoryService]);
+phoenix.service('CategoryService', ['$http', 'config', categoryService]);
 
 function categoryService($http, config) {
 

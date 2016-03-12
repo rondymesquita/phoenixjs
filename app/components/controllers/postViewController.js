@@ -1,5 +1,5 @@
 
-angular.module('PhoenixCMS').controller('PostViewController', ['$scope', '$rootScope', '$http', '$routeParams','config','PostService','Service', postViewController]);
+phoenix.controller('PostViewController', ['$scope', '$rootScope', '$http', '$routeParams','config','PostService','Service', postViewController]);
 
 function postViewController($scope, $rootScope, $http, $routeParams, config, postService, service) {
 

@@ -1,4 +1,4 @@
-angular.module('PhoenixCMS').service('Service', ['$http', 'config', service]);
+phoenix.service('Service', ['$http', 'config', service]);
 
 function service($http, config) {
 
