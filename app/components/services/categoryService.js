@@ -16,6 +16,7 @@ function categoryService($http, config) {
         }).success(function (posts){
 
             var categories = GetCategories(posts);
+            console.log(categories);
             callback(categories);
 
         });

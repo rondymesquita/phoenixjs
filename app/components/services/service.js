@@ -12,9 +12,9 @@ function service($http, config) {
         }).success(function (data, status){
             success(data, status);
         }).error(function(data, status){
-            error(data, status);
+            if(error){
+                error(data, status);
+            }
         });
-
-    }
-
+    }   
 }
