@@ -38,6 +38,7 @@ function indexController ($scope, $rootScope, $routeParams, $location, config, c
         $location.path("/search/"+search);
     }
 
+    //When page change, scrol to top
     $scope.pageChangeHandler = function(num) {
       window.scrollTo(0, 0);
     };
