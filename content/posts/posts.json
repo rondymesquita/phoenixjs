@@ -44,20 +44,5 @@
         "author":"Rondy Mesquita",
         "date":"January 28, 2015",
         "type":"html"
-    },
-    {
-        "id": "4",
-        "title": "Miojo Ipsum on the Fogão",
-        "excerpt": "Para não ficar muito cansativo vou agora ensinar a fazer um belo miojo, ferva trezentos mls de água em uma panela, quando estiver fervendo coloque o miojo, espere cozinhar por três minutos, retire o miojo do fogão, misture bem e sirva.",
-        "image":"content/posts/images/starwars_the_clone_wars.jpg",
-        "categories": [
-            "miojo"
-        ],
-        "tags":[
-            "turpis","basvitaeic"
-        ],
-        "author":"Rondy Mesquita",
-        "date":"January 28, 2015",
-        "type":"md"
     }
 ]

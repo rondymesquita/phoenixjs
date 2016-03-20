@@ -5,7 +5,7 @@ MyReporter.prototype.constructor = MyReporter;
 MyReporter.prototype.specDone=function(o){
     o=o||{};
     if(o.status!=="passed"){
-      console.warn("Failed: " + o.fullName + " " + o.failedExpectations[0].message);
+      //console.warn("Failed: " + o.fullName + " " + o.failedExpectations[0].message);
     }
 };
 var env = jasmine.getEnv();

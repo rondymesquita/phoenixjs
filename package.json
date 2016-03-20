@@ -1,7 +1,15 @@
 {
   "name": "phoenixjs",
   "version": "0.1.0",
-  "devDependencies": {
-    "jasmine": "^2.4.1"
+  "description": "Basic server nodejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "author": "rondinellimesquitas@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
   }
 }

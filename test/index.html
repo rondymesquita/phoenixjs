@@ -14,51 +14,37 @@
 	<script type="text/javascript" src="../bower_components/jasmine/lib/jasmine-core/jasmine-html.js"></script>
 	<script type="text/javascript" src="../bower_components/jasmine/lib/jasmine-core/boot.js"></script>
 
-    <!--  -->
-    <!-- Theme Styles -->
-    <link  href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link ng-href="../app/themes/{{theme}}/style.css" rel="stylesheet" type="text/css">
-    <link ng-href="../app/themes/{{theme}}/style-custom.css" rel="stylesheet" type="text/css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="../bower_components/angular-route/angular-route.min.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="../bower_components/showdown/compressed/Showdown.min.js"></script>
+    <script src="../bower_components/angular-markdown-directive/markdown.js"></script>
+    <script src="../bower_components/angular-utils-pagination/dirPagination.js"></script>
 
-  <!-- Libraries -->
-  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="../bower_components/angular/angular.min.js"></script>
-  <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
-  <script src="../bower_components/angular-route/angular-route.min.js"></script>
-
-  <script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-  <script src="../bower_components/showdown/compressed/Showdown.min.js"></script>
-  <script src="../bower_components/angular-markdown-directive/markdown.js"></script>
-  <script src="../bower_components/angular-utils-pagination/dirPagination.js"></script>
-
-  <!-- Phoenix CMS -->
-  <script src="../app/components/app.module.js"></script>
-  <script src="../app/components/app.routes.js"></script>
-  <script src="../app/config.js"></script>
-  <script src="../app/constants.js"></script>
-  <script src="../app/components/functions/functions.js"></script>
-
-  <script src="../app/components/controllers/indexController.js"></script>
-  <script src="../app/components/controllers/postListController.js"></script>
-  <script src="../app/components/controllers/postViewController.js"></script>
-  <script src="../app/components/controllers/postByCategoryController.js"></script>
-  <script src="../app/components/controllers/postBySearchController.js"></script>
-  <script src="../app/components/controllers/pageViewController.js"></script>
-
-
-  <script src="../app/components/directives/headerDirective.js"></script>
-  <script src="../app/components/directives/footerDirective.js"></script>
-  <script src="../app/components/directives/sidebarDirective.js"></script>
-  <script src="../app/components/directives/menuDirective.js"></script>
-  <script src="../app/components/directives/commentDirective.js"></script>
-
-
-  <script src="../app/components/services/postService.js"></script>
-  <script src="../app/components/services/categoryService.js"></script>
-  <script src="../app/components/services/service.js"></script>
-  <script src="../app/components/services/pageService.js"></script>
-
-  <script src="../app/components/filters/filters.js"></script>
+    <script src="app.module.test.js"></script>
+    <script src="../app/components/app.routes.js"></script>
+    <script src="../app/config.js"></script>
+    <script src="../app/constants.js"></script>
+    <script src="../app/components/functions/functions.js"></script>
+    <script src="../app/components/controllers/indexController.js"></script>
+    <script src="../app/components/controllers/postListController.js"></script>
+    <script src="../app/components/controllers/postViewController.js"></script>
+    <script src="../app/components/controllers/postByCategoryController.js"></script>
+    <script src="../app/components/controllers/postBySearchController.js"></script>
+    <script src="../app/components/controllers/pageViewController.js"></script>
+    <script src="../app/components/directives/headerDirective.js"></script>
+    <script src="../app/components/directives/footerDirective.js"></script>
+    <script src="../app/components/directives/sidebarDirective.js"></script>
+    <script src="../app/components/directives/menuDirective.js"></script>
+    <script src="../app/components/directives/commentDirective.js"></script>
+    <script src="../app/components/services/postService.js"></script>
+    <script src="../app/components/services/categoryService.js"></script>
+    <script src="../app/components/services/service.js"></script>
+    <script src="../app/components/services/pageService.js"></script>
+    <script src="../app/components/filters/filters.js"></script>
 
     <script src="jasmine.config.js"></script>
     <!-- <script src="spec/helloworld.spec.js"></script> -->
