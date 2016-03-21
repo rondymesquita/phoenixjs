@@ -1,0 +1,64 @@
+<html ng-app="PhoenixCMS" ng-controller="IndexController">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <meta name="description" content="" />
+  <meta name="author" content="PhoenixCMS" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <base href="./"> -->
+
+    <!-- Theme Styles -->
+    <link  href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link ng-href="app/themes/{{theme}}/style.css" rel="stylesheet" type="text/css">
+    <link ng-href="app/themes/{{theme}}/style-custom.css" rel="stylesheet" type="text/css">
+
+  <!-- Libraries -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+  <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+  <script src="bower_components/showdown/compressed/Showdown.min.js"></script>
+  <script src="bower_components/angular-markdown-directive/markdown.js"></script>
+  <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+
+  <!-- Phoenix CMS -->
+  <script src="app/components/app.module.js"></script>
+  <script src="app/components/app.routes.js"></script>
+  <script src="app/config.js"></script>
+  <script src="app/constants.js"></script>
+  <script src="app/components/functions/functions.js"></script>
+
+  <script src="app/components/controllers/indexController.js"></script>
+  <script src="app/components/controllers/postListController.js"></script>
+  <script src="app/components/controllers/postViewController.js"></script>
+  <script src="app/components/controllers/postByCategoryController.js"></script>
+  <script src="app/components/controllers/postBySearchController.js"></script>
+  <script src="app/components/controllers/pageViewController.js"></script>
+
+
+  <script src="app/components/directives/headerDirective.js"></script>
+  <script src="app/components/directives/footerDirective.js"></script>
+  <script src="app/components/directives/sidebarDirective.js"></script>
+  <script src="app/components/directives/menuDirective.js"></script>
+  <script src="app/components/directives/commentDirective.js"></script>
+
+
+  <script src="app/components/services/postService.js"></script>
+  <script src="app/components/services/categoryService.js"></script>
+  <script src="app/components/services/service.js"></script>
+  <script src="app/components/services/pageService.js"></script>
+
+  <script src="app/components/filters/filters.js"></script>
+
+  <!--<script src="http://phoenixcms.disqus.com/embed.js"></script>-->
+
+  <title>{{constants.siteName}}</title>
+</head>
+<body>
+    <div ng-view autoscroll="true">
+    </div>
+</body>
+</html>
