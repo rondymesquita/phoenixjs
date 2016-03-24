@@ -4,17 +4,9 @@ phoenix.constant('constants',{
     siteFooter: '2015 - Created by Rondy Mesquita - Powered by PhoenixJS and theme Rising',
     indexTitle: 'This is your custom index page',
     indexDescription: 'You can create a custom index page or use de default page listing your posts. Go to config.js file and configure it',
-
-
-
     searchResultTitle: 'Search results for: ',
     searchEmptyResultTitle: 'No result matches with search: ',
     category: 'Category: ',
-
-    // Constants of Rising theme
     searchPlaceholder: 'Type your search and enter' ,
     search: 'Search',
-
-
-
 });

@@ -1,8 +1,7 @@
-phoenix.service('Service', ['$http', 'config', service]);
+phoenix.service('Service', ['$http', service]);
 
-function service($http, config) {
+function service($http) {
 
-    //Do a generic GET request
     this.get = function(url, success, error){
 
         $http({
@@ -16,5 +15,5 @@ function service($http, config) {
                 error(data, status);
             }
         });
-    }   
+    };
 }

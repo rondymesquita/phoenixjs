@@ -7,8 +7,8 @@ function menuDirective(config,$sce){
         templateUrl: 'app/themes/'+config.theme+'/menus/menu.html',
         compile: function(element, attrs){
             return function(scope, element, attrs){
-                scope.menuBody = "app/themes/"+config.theme+"/menus/"+ attrs['menuBody'];
-            }
+                scope.menuBody = "app/themes/"+config.theme+"/menus/"+ attrs.menuBody;
+            };
         }
     };
 }

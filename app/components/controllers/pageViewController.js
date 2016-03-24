@@ -11,7 +11,6 @@ function pageViewController($scope, $rootScope, $http, $routeParams, pageService
         $rootScope.page = page;
         service.get('content/pages/' + $scope.routeParams.name + '.' + page.type, function(data, status){
           $scope.page.content = data;
-        })
+      });
     });
-
 }

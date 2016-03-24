@@ -3,8 +3,7 @@ phoenix.service('PageService', ['$http', 'config', pageService]);
 function pageService($http, config) {
 
     var pagesLocation = 'content/pages/pages.json';
-
-    //Get a page by Id
+    
     this.getByName= function(name, callback){
 
         $http({
@@ -18,6 +17,6 @@ function pageService($http, config) {
 
         });
 
-    }
+    };
 
 }

@@ -32,7 +32,7 @@ function routesConfig($routeProvider, $locationProvider, config) {
 
     .when('/search/:search', {
         templateUrl : function(urlattr){
-            return 'app/themes/' + config.theme + '/posts/bySearch.html'
+            return 'app/themes/' + config.theme + '/posts/bySearch.html';
         },
         controller  : 'PostBySearchController',
     })
@@ -40,7 +40,7 @@ function routesConfig($routeProvider, $locationProvider, config) {
     .when('/page/:name', {
         templateUrl : function(urlattr){
             console.log(urlattr);
-            return 'app/themes/' + config.theme + '/pages/view.html'
+            return 'app/themes/' + config.theme + '/pages/view.html';
         },
         controller  : 'PageViewController',
     })

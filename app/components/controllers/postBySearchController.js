@@ -10,6 +10,6 @@ function postBySearchController($scope, $rootScope, $http, $routeParams, $locati
     postService.getBySearch($scope.routeParams.search, function(posts){
             $scope.posts = posts;
             $scope.search = $scope.routeParams.search;
-    })
+    });
 
 }

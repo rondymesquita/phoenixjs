@@ -9,7 +9,6 @@ function postService($http, config) {
         this.categories = [];
     }
 
-    //List all posts
     this.list = function(callback){
 
         $http({
@@ -23,9 +22,8 @@ function postService($http, config) {
 
         });
 
-    }
+    };
 
-    //List all posts by givens string category
     this.listByCategory = function(category, callback){
 
         $http({
@@ -37,9 +35,8 @@ function postService($http, config) {
                 callback(posts);
             });
 
-    }
+    };
 
-    //Get a post by Id
     this.getById = function(id, callback){
 
         $http({
@@ -51,10 +48,8 @@ function postService($http, config) {
             callback(post);
         });
 
-    }
+    };
 
-    //Get a post by search
-    //Search only in json file
     this.getBySearch = function(search, callback){
 
         var request = $http({
@@ -67,7 +62,7 @@ function postService($http, config) {
 
         });
 
-    }
+    };
 
 
 
