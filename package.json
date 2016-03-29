@@ -16,6 +16,7 @@
     "fs": "0.0.2",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.4",
     "gulp-concat": "^2.6.0",
     "gulp-data": "^1.2.1",
     "gulp-js-minify": "0.0.3",
