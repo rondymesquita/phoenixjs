@@ -15,6 +15,7 @@ var data = require('gulp-data');
 var runSequence = require('run-sequence');
 var jsonfile = require('jsonfile');
 var cleanCSS = require('gulp-clean-css');
+var purify = require('gulp-purifycss');
 
 var phoenixJs = [
 	'./app/components/*.js',
@@ -23,7 +24,6 @@ var phoenixJs = [
 ];
 
 var libraries = [
-	'./bower_components/jquery/dist/jquery.js',
 	'./bower_components/angular/angular.js',
 	'./bower_components/angular-resource/angular-resource.js',
 	'./bower_components/angular-route/angular-route.js',
@@ -42,7 +42,7 @@ gulp.task('clean', function () {
 		.pipe(clean());
 });
 
-gulp.task('cleanTempFiles', ['default'],function () {
+gulp.task('cleanTempFiles', [],function () {
 	gulp
 		.src('dist/libraries.js', {read: false})
 		.pipe(clean());
@@ -62,15 +62,16 @@ gulp.task('js', function() {
 	gulp
 		.src(phoenixJs)
 		.pipe(concat('dist'))
-		.pipe(streamify(packer({base62: true, shrink: false})))
-		.pipe(rename('phoenix-min.js'))
+		.pipe(streamify(packer({base62: true, shrink: false}))) //work 7k
+		.pipe(rename('phoenix.min.js'))
 		.pipe(gulp.dest('dist'));
 
 	gulp
 		.src(libraries)
 		.pipe(concat('libraries.js'))
-		//.pipe(rename('libraries.js'))
-		.pipe(minify())
+		// .pipe(minify()) // work 197k
+		.pipe(uglify()) // 197k
+		.pipe(rename('libraries.min.js'))
 		.pipe(gulp.dest('dist'));
 
 	// contentJs.forEach(function(file){
@@ -96,7 +97,14 @@ gulp.task('css', function() {
 		gulp
 			.src(styles)
 			.pipe(concat('dist'))
-			.pipe(cleanCSS({compatibility: 'ie8'}))
+			.pipe(purify([
+				'./index.html',
+				'./app/themes/**/*.js',
+				'./app/themes/**/*.html',
+				'./content/**/*.js',
+				'./content/**/*.html'
+			])) //remove unused based on this files
+			.pipe(cleanCSS({compatibility: 'ie8'})) // minify
 			.pipe(rename('styles.css'))
 			.pipe(gulp.dest('dist'));
 
@@ -104,10 +112,6 @@ gulp.task('css', function() {
 		console.log('Expected styles.json file does not exists. Theme styles will not be minified.');
 	}
 
-});
-
-gulp.task('test', function() {
-	getThemeNameFromConfig();
 });
 
 gulp.task('copy', function() {

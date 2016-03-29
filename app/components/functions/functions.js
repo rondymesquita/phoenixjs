@@ -23,13 +23,13 @@ function GetPostsByCategory(posts, category){
 
     var result = [];
 
-    $.each(posts, function(index, value){
+    posts.forEach(function(post){
 
-        posts[index].url = GenerateFriendlyUrl(posts[index]);
+        post.url = GenerateFriendlyUrl(post);
 
-        for(var i = 0; i < posts[index].categories.length; i++){
-            if(category === posts[index].categories[i]){
-                result.push(posts[index]);
+        for(var i = 0; i < post.categories.length; i++){
+            if(category === post.categories[i]){
+                result.push(post);
             }
         }
 
@@ -42,8 +42,8 @@ function GetPostsByCategory(posts, category){
  * Get posts by given json posts and id
  */
 function GetPostById(posts, id){
-    $.each(posts, function(index, value){
-        posts[index].url = GenerateFriendlyUrl(posts[index]);
+    posts.forEach(function(post){
+        post.url = GenerateFriendlyUrl(post);
     });
     return posts[id-1];
 }
@@ -56,21 +56,21 @@ function GetPostsBySearch(posts, search){
     search = EncodeString(search);
     var result = [];
 
-    $.each(posts, function(index, value){
+    posts.forEach(function(post){
         var insertThisPost = false;
 
-        /*Each post attribute*/
-        $.each(posts[index], function(jndex, value){
-            value = EncodeString(value);
+        var value;
+        for(var attr in post){
+            value = EncodeString(post[attr]);
 
             if(value.indexOf(search) != -1){
                 insertThisPost = true;
-                posts[index].url = GenerateFriendlyUrl(posts[index]);
+                post.url = GenerateFriendlyUrl(post);
             }
-        });
+        }
 
         if(insertThisPost)
-            result.push(posts[index]);
+            result.push(post);
 
     });
 
@@ -82,9 +82,9 @@ function GetPostsBySearch(posts, search){
  */
 function GetPosts(posts, search){
     var result = [];
-    $.each(posts, function(index, value){
-        posts[index].url = GenerateFriendlyUrl(posts[index]);
-        result.push(posts[index]);
+    posts.forEach(function(post){
+        post.url = GenerateFriendlyUrl(post);
+        result.push(post);
     });
     return result;
 }
@@ -94,12 +94,11 @@ function GetPosts(posts, search){
  */
 function GetCategories(posts){
     var categories = [];
-    $.each(posts, function(index, value){
-        /*get post categories*/
-        for(var i = 0; i < posts[index].categories.length; i++){
+    posts.forEach(function(post){
+        for(var i = 0; i < post.categories.length; i++){
 
-            if($.inArray(posts[index].categories[i], categories) == -1){
-                categories = categories.concat(posts[index].categories[i]);
+            if(categories.indexOf(post.categories[i]) === -1){
+                categories = categories.concat(post.categories[i]);
             }
         }
     });
@@ -110,15 +109,15 @@ function GetCategories(posts){
  * Get page by given title
  */
 function GetPageByTitle(pages, title){
-    var page = {};
-    $.each(pages, function(index, value){
-        pages[index].url = GenerateFriendlyUrl(pages[index]);
+    var p = {};
+    pages.forEach(function(page){
+        page.url = GenerateFriendlyUrl(page);
 
-        if(title === pages[index].url){
-            page = pages[index];
+        if(title === page.url){
+            p = page;
             return false;
         }
 
     });
-    return page;
+    return p;
 }
