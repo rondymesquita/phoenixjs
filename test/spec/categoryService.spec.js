@@ -71,10 +71,11 @@ describe("CategoryServiceTest", function() {
 	}));
 
 	afterEach(function(){
-
+		// $httpBackend.verifyNoOutstandingExpectation();
+		// $httpBackend.verifyNoOutstandingRequest();
 	});
 
-    it("should list all categories from posts", function(done) {
+    it("Should list all categories from posts", function(done) {
 
 		$httpBackend
 			.expectGET('content/posts/posts.json')

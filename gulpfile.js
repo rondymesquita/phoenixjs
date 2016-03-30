@@ -17,12 +17,10 @@ var jsonfile = require('jsonfile');
 var cleanCSS = require('gulp-clean-css');
 var purify = require('gulp-purifycss');
 
-var OUTPUT = "dist"
+var OUTPUT = "dist";
 
 var phoenixJs = [
-	'./app/components/*.js',
-	'./app/*.js',
-	'./app/components/*/*.js'
+	'./app/components/**/*.js'
 ];
 
 var libraries = [
@@ -35,8 +33,20 @@ var libraries = [
 	'./bower_components/angular-utils-pagination/dirPagination.js'
 ];
 
-var libraries = [
+
+var phoenixTest = [
+	'!./app/components/app.module.js', //exclude default module
+	'./test/app.module.test.js', //add test module
+	'./app/components/**/*.js'
+];
+
+var librariesTest = [
+	'./bower_components/jasmine/lib/jasmine-core/jasmine.js',
+	'./bower_components/jasmine/lib/jasmine-core/jasmine-html.js',
+	'./bower_components/jasmine/lib/jasmine-core/boot.js',
+	'./bower_components/jquery/dist/jquery.js',
 	'./bower_components/angular/angular.js',
+	'./bower_components/angular-mocks/angular-mocks.js',
 	'./bower_components/angular-resource/angular-resource.js',
 	'./bower_components/angular-route/angular-route.js',
 	'./bower_components/angular-sanitize/angular-sanitize.js',
@@ -92,6 +102,21 @@ gulp.task('js', function() {
 			compress: true,
 		}))
 		.pipe(rename('libraries.min.js'))
+		.pipe(gulp.dest(OUTPUT));
+
+	/*
+		For Testing
+		Libraries with Angular Mock, Jquery, Jasmine
+	*/
+
+	gulp
+		.src(phoenixTest)
+		.pipe(concat('phoenix.test.js'))
+		.pipe(gulp.dest(OUTPUT));
+
+	gulp
+		.src(librariesTest)
+		.pipe(concat('libraries.test.js'))
 		.pipe(gulp.dest(OUTPUT));
 
 });
@@ -163,7 +188,7 @@ gulp.doneCallback = function(){
 
 /* Functions */
 function getThemeNameFromConfig(){
-	var content = fs.readFileSync('./app/config.js','utf8');
+	var content = fs.readFileSync('./app/components/config.js','utf8');
 	content = content.replace(/(\/\*.*\*\/)/g,''); // removing comments
 	content = content.replace(/'/g, '"');
 	var regex = new RegExp(/(\{[\s\S]*\})/);//capturing all between brackets
