@@ -14,6 +14,7 @@ function categoryService($http, config) {
             url:  postsLocation,
             cache: true
         }).success(function (posts){
+            // console.log(posts);
             var categories = GetCategories(posts);
             callback(categories);
         });

@@ -17,10 +17,22 @@ var jsonfile = require('jsonfile');
 var cleanCSS = require('gulp-clean-css');
 var purify = require('gulp-purifycss');
 
+var OUTPUT = "dist"
+
 var phoenixJs = [
 	'./app/components/*.js',
 	'./app/*.js',
 	'./app/components/*/*.js'
+];
+
+var libraries = [
+	'./bower_components/angular/angular.js',
+	'./bower_components/angular-resource/angular-resource.js',
+	'./bower_components/angular-route/angular-route.js',
+	'./bower_components/angular-sanitize/angular-sanitize.js',
+	'./bower_components/showdown/compressed/Showdown.js',
+	'./bower_components/angular-markdown-directive/markdown.js',
+	'./bower_components/angular-utils-pagination/dirPagination.js'
 ];
 
 var libraries = [
@@ -59,27 +71,28 @@ gulp.task('lint', function() {
 
 gulp.task('js', function() {
 
+	/*For Production*/
 	gulp
 		.src(phoenixJs)
-		.pipe(concat('dist'))
-		.pipe(streamify(packer({base62: true, shrink: false}))) //work 7k
+		.pipe(concat('phoenix.js'))
+		.pipe(gulp.dest(OUTPUT))
+		.pipe(uglify({
+			mangle: false,
+			compress: true,
+		}))
 		.pipe(rename('phoenix.min.js'))
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest(OUTPUT));
 
 	gulp
 		.src(libraries)
 		.pipe(concat('libraries.js'))
-		// .pipe(minify()) // work 197k
-		.pipe(uglify()) // 197k
+		.pipe(gulp.dest(OUTPUT))
+		.pipe(uglify({
+			mangle: true,
+			compress: true,
+		}))
 		.pipe(rename('libraries.min.js'))
-		.pipe(gulp.dest('dist'));
-
-	// contentJs.forEach(function(file){
-	// 	gulp
-	// 		.src(file)
-	// 		.pipe(minify())
-	// 		.pipe(gulp.dest('dist'));
-	// });
+		.pipe(gulp.dest(OUTPUT));
 
 });
 
@@ -106,7 +119,7 @@ gulp.task('css', function() {
 			])) //remove unused based on this files
 			.pipe(cleanCSS({compatibility: 'ie8'})) // minify
 			.pipe(rename('styles.css'))
-			.pipe(gulp.dest('dist'));
+			.pipe(gulp.dest(OUTPUT));
 
 	}catch(err){
 		console.log('Expected styles.json file does not exists. Theme styles will not be minified.');
@@ -119,15 +132,15 @@ gulp.task('copy', function() {
 	gulp
 		.src('src/index.src.html')
 		.pipe(rename('index.html'))
-		.pipe(gulp.dest('dist'));
+		.pipe(gulp.dest(OUTPUT));
 
 	gulp
 		.src('content/**')
-		.pipe(gulp.dest('dist/content'));
+		.pipe(gulp.dest(OUTPUT + '/content'));
 
 	gulp
 		.src('app/themes/**')
-		.pipe(gulp.dest('dist/app/themes'));
+		.pipe(gulp.dest(OUTPUT + '/app/themes'));
 });
 
 
