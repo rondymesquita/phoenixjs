@@ -14,9 +14,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        './bower_components/jasmine/lib/jasmine-core/jasmine.js',
-    	'./bower_components/jasmine/lib/jasmine-core/jasmine-html.js',
-    	'./bower_components/jasmine/lib/jasmine-core/boot.js',
+        //You do not need to load jasmine because its load by default by karma
     	'./bower_components/jquery/dist/jquery.js',
     	'./bower_components/angular/angular.js',
     	'./bower_components/angular-mocks/angular-mocks.js',
@@ -27,8 +25,8 @@ module.exports = function(config) {
     	'./bower_components/angular-markdown-directive/markdown.js',
     	'./bower_components/angular-utils-pagination/dirPagination.js',
 
-        {pattern: './app/components/app.module.js', included: false, served: false},//exclude default module
-    	'./test/app.module.test.js', //add test module
+        {pattern: './app/components/app.js', included: false, served: false},//exclude default module
+    	'./test/app.test.js', //add test module
     	'./app/components/**/*.js',
 
         'test/spec/*.spec.js'
@@ -49,7 +47,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress','dots'],
 
 
     // web server port
@@ -76,7 +74,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous
