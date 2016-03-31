@@ -8,7 +8,7 @@ describe("CategoryServiceTest", function() {
 
 
 	beforeEach(function(){
-		module('PhoenixCMS');
+		module('PhoenixJS');
 
 		expectedCategories = ["star-wars", "the-empire-strikes-back", "movies", "a-new-hope", "the-clone-wars"];
 		expectedPosts = [

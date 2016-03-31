@@ -1,9 +1,6 @@
-var phoenix = angular
-.module('PhoenixCMS', ['ngRoute','btford.markdown','angularUtils.directives.dirPagination'])
+var phoenix = angular.module('PhoenixJS', ['ngRoute','btford.markdown','angularUtils.directives.dirPagination'])
 .run(function(){
-    /*
-    console.log("Loaded");
-    */
+    console.log("PhoenixJS Loaded");
 }).config(function($httpProvider, paginationTemplateProvider, config){
     $httpProvider.interceptors.push(interceptor);
     paginationTemplateProvider.setPath(config.pagTemplate);

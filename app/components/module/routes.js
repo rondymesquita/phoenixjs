@@ -11,7 +11,6 @@ function routesConfig($routeProvider, $locationProvider, config) {
             }else{
                 return 'app/themes/' + config.theme + '/posts/list.html';
             }
-
         },
         controller  : 'PostListController'
     })
