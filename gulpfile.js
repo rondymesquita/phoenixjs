@@ -20,7 +20,8 @@ var purify = require('gulp-purifycss');
 var OUTPUT = "dist";
 
 var phoenixJs = [
-	'./app/components/**/*.js'
+	'./app/components/app.js', // load module first
+	'./app/components/**/*.js' // load all that remains except module loaded already
 ];
 
 var libraries = [
@@ -35,9 +36,9 @@ var libraries = [
 
 
 var phoenixTest = [
-	'!./app/components/app.module.js', //exclude default module
-	'./test/app.module.test.js', //add test module
-	'./app/components/**/*.js'
+	'!./app/components/app.js', //exclude default module
+	'./test/app.test.js', //add test module
+	'./app/components/**/*.js',
 ];
 
 var librariesTest = [
@@ -188,7 +189,7 @@ gulp.doneCallback = function(){
 
 /* Functions */
 function getThemeNameFromConfig(){
-	var content = fs.readFileSync('./app/components/config.js','utf8');
+	var content = fs.readFileSync('./app/components/config/config.js','utf8');
 	content = content.replace(/(\/\*.*\*\/)/g,''); // removing comments
 	content = content.replace(/'/g, '"');
 	var regex = new RegExp(/(\{[\s\S]*\})/);//capturing all between brackets
@@ -198,5 +199,5 @@ function getThemeNameFromConfig(){
 }
 
 function logInfo(task, msg){
-	console.log('===> [Phoenix]['+task+'] '+ msg);
+	console.log('===> [PhoenixJS]['+task+'] '+ msg);
 }
