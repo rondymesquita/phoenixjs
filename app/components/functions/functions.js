@@ -1,26 +1,31 @@
-function PhoenixFunctions(){}
+function PhoenixFunctions(){
+    //var self = this;
+}
 PhoenixFunctions.prototype = {
     /*
      * Remove acentuation
      */
     encodeString: function(s){
         var r = s.toString().toLowerCase();
-        non_asciis = {
-            'a': '[àáâãäå]',
-            'ae': 'æ',
-            'c': 'ç',
-            'e': '[èéêë]',
-            'i': '[ìíîï]',
-            'n': 'ñ',
-            'o': '[òóôõö]',
-            'oe': 'œ',
-            'u': '[ùúûűü]',
-            'y': '[ýÿ]'
-        };
-        for (var i in non_asciis) {
-            // console.log(i);
-            r = r.replace(new RegExp(non_asciis[i], 'g'), i);
-        }
+        non_asciis = [
+            {value: 'a',regExp: '[àáâãäå]'},
+            {value: 'ae',regExp: 'æ'},
+            {value: 'c',regExp: 'ç'},
+            {value: 'e',regExp: '[èéêë]'},
+            {value: 'i',regExp: '[ìíîï]'},
+            {value: 'n',regExp: 'ñ'},
+            {value: 'o',regExp: '[òóôõö]'},
+            {value: 'oe',regExp: 'œ'},
+            {value: 'u',regExp: '[ùúûűü]'},
+            {value: 'y',regExp: '[ýÿ]'},
+            {value: '-',regExp: '[^A-Za-z0-9]+'}, //all special chars
+            {value: '',regExp: '^[^A-Za-z0-9]+'}, //special chars at start
+            {value: '',regExp: '[^A-Za-z0-9]+$'} //special chars at end
+        ];
+        non_asciis.forEach(function(char){
+            r = r.replace(new RegExp(char.regExp, 'g'), char.value);
+        });
+
         return r.toLowerCase();
     },
 
@@ -28,22 +33,20 @@ PhoenixFunctions.prototype = {
      * Generate a friendly url to post based on title
      */
     generateFriendlyUrl: function(post){
-        var titleWithoutAccentuations = this.encodeString(post.title);
-        console.log(titleWithoutAccentuations);
-        var titleWithoutPontuation = titleWithoutAccentuations.replace(/[^\w\s]/g,"");
-        console.log(titleWithoutPontuation);
-        return this.encodeString(post.title);
+        post.slug = this.encodeString(post.title);
+        return post;
     },
 
     /*
      * Get posts by given json posts and category
      */
     getPostsByCategory: function(posts, category){
-        var result = [];
+        var result = [],
+            self = this;
 
         posts.forEach(function(post){
 
-            post.url = GenerateFriendlyUrl(post);
+            post = self.generateFriendlyUrl(post);
 
             for(var i = 0; i < post.categories.length; i++){
                 if(category === post.categories[i]){
@@ -60,8 +63,9 @@ PhoenixFunctions.prototype = {
    * Get posts by given json posts and id
    */
   getPostById: function(posts, id){
+      var self = this;
       posts.forEach(function(post){
-          post.url = GenerateFriendlyUrl(post);
+          post = self.generateFriendlyUrl(post);
       });
       return posts[id-1];
   },
@@ -71,19 +75,20 @@ PhoenixFunctions.prototype = {
    */
   getPostsBySearch: function(posts, search){
 
-      search = EncodeString(search);
-      var result = [];
+      search = this.encodeString(search);
+      var result = [],
+          self = this;
 
       posts.forEach(function(post){
           var insertThisPost = false;
 
           var value;
           for(var attr in post){
-              value = EncodeString(post[attr]);
+              value = self.encodeString(post[attr]);
 
               if(value.indexOf(search) != -1){
                   insertThisPost = true;
-                  post.url = GenerateFriendlyUrl(post);
+                  post.url = self.generateFriendlyUrl(post);
               }
           }
 
@@ -99,9 +104,11 @@ PhoenixFunctions.prototype = {
    * Get posts
    */
   getPosts: function(posts, search){
-      var result = [];
+      var result = [],
+          self = this;
+
       posts.forEach(function(post){
-          post.url = GenerateFriendlyUrl(post);
+          post = self.generateFriendlyUrl(post);
           result.push(post);
       });
       return result;
@@ -112,6 +119,7 @@ PhoenixFunctions.prototype = {
    */
   getCategories: function(posts){
       var categories = [];
+
       posts.forEach(function(post){
           for(var i = 0; i < post.categories.length; i++){
 
@@ -127,11 +135,12 @@ PhoenixFunctions.prototype = {
    * Get page by given title
    */
   getPageByTitle: function(pages, title){
-      var p = {};
+      var p = {},
+          self = this;
       pages.forEach(function(page){
-          page.url = GenerateFriendlyUrl(page);
+          post = self.generateFriendlyUrl(page);
 
-          if(title === page.url){
+          if(title === page.slug){
               p = page;
               return false;
           }
@@ -140,128 +149,4 @@ PhoenixFunctions.prototype = {
       return p;
   }
 
-}
-
-
-/*
- * Remove acentuation
- */
-function EncodeString(s){
-    var r = s.toString().toLowerCase();
-    non_asciis = {'a': '[àáâãäå]', 'ae': 'æ', 'c': 'ç', 'e': '[èéêë]', 'i': '[ìíîï]', 'n': 'ñ', 'o': '[òóôõö]', 'oe': 'œ', 'u': '[ùúûűü]', 'y': '[ýÿ]'};
-    for (var i in non_asciis) { r = r.replace(new RegExp(non_asciis[i], 'g'), i); }
-    return r.toLowerCase();
-}
-
-/*
- * Generate a friendly url to post based on title
- */
-function GenerateFriendlyUrl(post){
-    return post.title.replace(/ /g,"-").toLowerCase();
-}
-
-/*
- * Get posts by given json posts and category
- */
-function GetPostsByCategory(posts, category){
-
-    var result = [];
-
-    posts.forEach(function(post){
-
-        post.url = GenerateFriendlyUrl(post);
-
-        for(var i = 0; i < post.categories.length; i++){
-            if(category === post.categories[i]){
-                result.push(post);
-            }
-        }
-
-    });
-
-  return result;
-}
-
-/*
- * Get posts by given json posts and id
- */
-function GetPostById(posts, id){
-    posts.forEach(function(post){
-        post.url = GenerateFriendlyUrl(post);
-    });
-    return posts[id-1];
-}
-
-/*
- * Get posts by given json posts and search
- */
-function GetPostsBySearch(posts, search){
-
-    search = EncodeString(search);
-    var result = [];
-
-    posts.forEach(function(post){
-        var insertThisPost = false;
-
-        var value;
-        for(var attr in post){
-            value = EncodeString(post[attr]);
-
-            if(value.indexOf(search) != -1){
-                insertThisPost = true;
-                post.url = GenerateFriendlyUrl(post);
-            }
-        }
-
-        if(insertThisPost)
-            result.push(post);
-
-    });
-
-    return result;
-}
-
-/*
- * Get posts
- */
-function GetPosts(posts, search){
-    var result = [];
-    posts.forEach(function(post){
-        post.url = GenerateFriendlyUrl(post);
-        result.push(post);
-    });
-    return result;
-}
-
-/*
- * Get categories list from posts
- */
-function GetCategories(posts){
-    var categories = [];
-    posts.forEach(function(post){
-        for(var i = 0; i < post.categories.length; i++){
-
-            if(categories.indexOf(post.categories[i]) === -1){
-                categories = categories.concat(post.categories[i]);
-            }
-        }
-    });
-    return categories;
-}
-
-/*
- * Get page by given title
- */
-function GetPageByTitle(pages, title){
-    var p = {};
-    pages.forEach(function(page){
-        page.url = GenerateFriendlyUrl(page);
-
-        if(title === page.url){
-            p = page;
-            return false;
-        }
-
-    });
-    return p;
 }

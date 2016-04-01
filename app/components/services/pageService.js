@@ -3,7 +3,8 @@ phoenix.service('PageService', ['$http', 'config', pageService]);
 function pageService($http, config) {
 
     var pagesLocation = 'content/pages/pages.json';
-    
+    var phoenixFunctions = new PhoenixFunctions();
+
     this.getByName= function(name, callback){
 
         $http({
@@ -12,7 +13,7 @@ function pageService($http, config) {
             cache: true
         }).success(function (pages){
 
-            var page = GetPageByTitle(pages, name);
+            var page = phoenixFunctions.getPageByTitle(pages, name);
             callback(page);
 
         });

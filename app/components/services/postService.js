@@ -3,6 +3,7 @@ phoenix.service('PostService', ['$http', 'config', postService]);
 function postService($http, config) {
 
     var postsLocation = 'content/posts/posts.json';
+    var phoenixFunctions = new PhoenixFunctions();
 
     function Query(){
         this.posts = [];
@@ -17,7 +18,7 @@ function postService($http, config) {
             cache: true
         }).success(function (data){
 
-            var posts = GetPosts(data);
+            var posts = phoenixFunctions.getPosts(data);
             callback(posts);
 
         });
@@ -31,7 +32,7 @@ function postService($http, config) {
             url: postsLocation,
             cache: true
             }).success(function (data){
-                var posts = GetPostsByCategory(data, category);
+                var posts = phoenixFunctions.getPostsByCategory(data, category);
                 callback(posts);
             });
 
@@ -44,7 +45,7 @@ function postService($http, config) {
             url: postsLocation,
             cache: true
         }).success(function (data){
-            var post = GetPostById(data, id);
+            var post = phoenixFunctions.getPostById(data, id);
             callback(post);
         });
 
@@ -57,7 +58,7 @@ function postService($http, config) {
             url: postsLocation,
             cache: true,
         }).success(function(data){
-            var posts = GetPostsBySearch(data, search);
+            var posts = phoenixFunctions.getPostsBySearch(data, search);
             callback(posts);
 
         });
