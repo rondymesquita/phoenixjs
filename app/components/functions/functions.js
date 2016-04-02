@@ -63,11 +63,12 @@ PhoenixFunctions.prototype = {
    * Get posts by given json posts and id
    */
   getPostById: function(posts, id){
-      var self = this;
-      posts.forEach(function(post){
-          post = self.generateFriendlyUrl(post);
-      });
-      return posts[id-1];
+    //   var self = this;
+    //   posts.forEach(function(post){
+    //       post = self.generateFriendlyUrl(post);
+    //   });
+    //   return posts[id-1];
+    return this.generateFriendlyUrl(posts[id-1]);
   },
 
   /*
@@ -88,7 +89,7 @@ PhoenixFunctions.prototype = {
 
               if(value.indexOf(search) != -1){
                   insertThisPost = true;
-                  post.url = self.generateFriendlyUrl(post);
+                  post = self.generateFriendlyUrl(post);
               }
           }
 

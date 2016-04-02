@@ -5,11 +5,6 @@ function postService($http, config) {
     var postsLocation = 'content/posts/posts.json';
     var phoenixFunctions = new PhoenixFunctions();
 
-    function Query(){
-        this.posts = [];
-        this.categories = [];
-    }
-
     this.list = function(callback){
 
         $http({
