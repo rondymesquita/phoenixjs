@@ -32,9 +32,19 @@ PhoenixFunctions.prototype = {
     /*
      * Generate a friendly url to post based on title
      */
-    generateFriendlyUrl: function(post){
-        post.slug = this.encodeString(post.title);
-        return post;
+    generateFriendlyUrlToPost: function(publication){
+        publication.slug = this.encodeString(publication.title);
+        publication.url = "#post/" + publication.id + "/" + publication.slug;
+        return publication;
+    },
+
+    /*
+     * Generate a friendly url to post based on title
+     */
+    generateFriendlyUrlToPage: function(publication){
+        publication.slug = this.encodeString(publication.title);
+        publication.url = "#page/" + publication.id + "/" + publication.slug;
+        return publication;
     },
 
     /*
@@ -46,7 +56,7 @@ PhoenixFunctions.prototype = {
 
         posts.forEach(function(post){
 
-            post = self.generateFriendlyUrl(post);
+            post = self.generateFriendlyUrlToPost(post);
 
             for(var i = 0; i < post.categories.length; i++){
                 if(category === post.categories[i]){
@@ -65,10 +75,10 @@ PhoenixFunctions.prototype = {
   getPostById: function(posts, id){
     //   var self = this;
     //   posts.forEach(function(post){
-    //       post = self.generateFriendlyUrl(post);
+    //       post = self.generateFriendlyUrlToPost(post);
     //   });
     //   return posts[id-1];
-    return this.generateFriendlyUrl(posts[id-1]);
+    return this.generateFriendlyUrlToPost(posts[id-1]);
   },
 
   /*
@@ -89,7 +99,7 @@ PhoenixFunctions.prototype = {
 
               if(value.indexOf(search) != -1){
                   insertThisPost = true;
-                  post = self.generateFriendlyUrl(post);
+                  post = self.generateFriendlyUrlToPost(post);
               }
           }
 
@@ -109,7 +119,7 @@ PhoenixFunctions.prototype = {
           self = this;
 
       posts.forEach(function(post){
-          post = self.generateFriendlyUrl(post);
+          post = self.generateFriendlyUrlToPost(post);
           result.push(post);
       });
       return result;
@@ -120,22 +130,29 @@ PhoenixFunctions.prototype = {
    */
   getCategories: function(posts){
       var categories = [];
+      var tempCategories = [];
+        posts.forEach(function(post){
+            for(var i = 0; i < post.categories.length; i++){
 
-      posts.forEach(function(post){
-          for(var i = 0; i < post.categories.length; i++){
+                var category = {
+                    title: post.categories[i],
+                    url: "#category/" + post.categories[i]
+                };
 
-              if(categories.indexOf(post.categories[i]) === -1){
-                  categories = categories.concat(post.categories[i]);
-              }
-          }
-      });
-      return categories;
+                if(tempCategories.indexOf(post.categories[i]) === -1){
+                    tempCategories = tempCategories.concat(post.categories[i]);
+                    categories.push(category)
+                }
+            }
+        });
+
+        return categories;
   },
 
   /*
-   * Get page by given title
+   * Get page by given slug
    */
-  getPageByTitle: function(pages, title){
+  getPageBySlug: function(pages, title){
       var p = {},
           self = this;
       pages.forEach(function(page){
@@ -148,6 +165,13 @@ PhoenixFunctions.prototype = {
 
       });
       return p;
+  },
+
+  /*
+   * Get page by given id
+   */
+  getPageById: function(pages, id){
+     return this.generateFriendlyUrlToPage(pages[id-1]);
   }
 
 }

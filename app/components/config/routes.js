@@ -36,7 +36,7 @@ function routesConfig($routeProvider, $locationProvider, config) {
         controller  : 'PostBySearchController',
     })
 
-    .when('/page/:name', {
+    .when('/page/:id/:title', {
         templateUrl : function(urlattr){
             console.log(urlattr);
             return 'app/themes/' + config.theme + '/pages/view.html';

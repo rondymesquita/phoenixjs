@@ -21,7 +21,7 @@
         Categories
     </h4>
     <div class="list-group">
-        <a ng-repeat="category in categories" href="#category/{{category}}" class="list-group-item list-group-item-custom" >{{category}}</a>
+        <a ng-repeat="category in categories" href="{{category.url}}" class="list-group-item list-group-item-custom" >{{category.title}}</a>
     </div>
 </div>
 

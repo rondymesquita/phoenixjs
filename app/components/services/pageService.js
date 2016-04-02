@@ -5,7 +5,8 @@ function pageService($http, config) {
     var pagesLocation = 'content/pages/pages.json';
     var phoenixFunctions = new PhoenixFunctions();
 
-    this.getByName= function(name, callback){
+    this.getById= function(id, callback){
+
 
         $http({
             method:'GET',
@@ -13,7 +14,8 @@ function pageService($http, config) {
             cache: true
         }).success(function (pages){
 
-            var page = phoenixFunctions.getPageByTitle(pages, name);
+            var page = phoenixFunctions.getPageById(pages, id);
+            
             callback(page);
 
         });

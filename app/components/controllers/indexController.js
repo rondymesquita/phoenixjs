@@ -14,12 +14,9 @@ function indexController ($scope, $rootScope, $routeParams, $location, config, c
         $scope.categories = categories;
     });
 
+
     service.get('content/menus/menu.json',function(data){
         $scope.menuLinks = data;
-    });
-
-    service.get('content/social.json',function(data){
-        $scope.social = data;
     });
 
     $scope.isActive = function(item) {
@@ -36,5 +33,10 @@ function indexController ($scope, $rootScope, $routeParams, $location, config, c
     $scope.pageChangeHandler = function(num) {
       window.scrollTo(0, 0);
     };
+
+    /* istanbul ignore next: custom for theme */
+    service.get('content/social.json',function(data){
+        $scope.social = data;
+    });
 
 }

@@ -1,8 +1,19 @@
 
-describe("CategoryServiceTest", function() {
-	var categoryService,
+describe("ServiceTest", function() {
+	var service,
 		$httpBackend,
-		expectedCategories = [{title: "star-wars", url: "#category/star-wars"}, {title: "the-empire-strikes-back", url: "#category/the-empire-strikes-back"}, {title: "movies", url: "#category/movies"}, {title: "a-new-hope", url: "#category/a-new-hope"}, {title: "the-clone-wars", url: "#category/the-clone-wars"}, {title: "animation", url: "#category/animation"}],
+		expectedPosts;
+
+	beforeEach(function(){
+		module('PhoenixJS');
+	});
+
+	beforeEach(inject(function(_Service_, _$httpBackend_, _$rootScope_){
+		// The injector unwraps the underscores (_) from around the parameter names when matching
+		service = _Service_;
+		$httpBackend = _$httpBackend_;
+		$rootScope = _$rootScope_;
+
 		expectedPosts = [
 		    {
 		        "id": "1",
@@ -54,16 +65,6 @@ describe("CategoryServiceTest", function() {
 		    }
 		];
 
-	beforeEach(function(){
-		module('PhoenixJS');
-	});
-
-	beforeEach(inject(function(_CategoryService_, _$httpBackend_, _$rootScope_){
-		// The injector unwraps the underscores (_) from around the parameter names when matching
-		categoryService = _CategoryService_;
-		$httpBackend = _$httpBackend_;
-		$rootScope = _$rootScope_;
-
 		$httpBackend
 			.expectGET('content/posts/posts.json')
 			.respond(expectedPosts);
@@ -79,11 +80,10 @@ describe("CategoryServiceTest", function() {
 		// $httpBackend.verifyNoOutstandingRequest();
 	});
 
-    it("Should list all categories from posts", function(done) {
+    it("Should do a get request to posts.json", function(done) {
 
-		categoryService.list(function(categories){
-			// console.log(categories);
-	        expect(expectedCategories).toEqual(categories);
+		service.get('content/posts/posts.json',function(posts){
+	        expect(expectedPosts).toEqual(posts);
 			done();
 	    });
 
