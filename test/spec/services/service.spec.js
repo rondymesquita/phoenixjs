@@ -2,17 +2,19 @@
 describe("ServiceTest", function() {
 	var service,
 		$httpBackend,
-		expectedPosts;
+		expectedPosts,
+		config;
 
 	beforeEach(function(){
 		module('PhoenixJS');
 	});
 
-	beforeEach(inject(function(_Service_, _$httpBackend_, _$rootScope_){
+	beforeEach(inject(function(_Service_, _$httpBackend_, _$rootScope_, _config_){
 		// The injector unwraps the underscores (_) from around the parameter names when matching
 		service = _Service_;
 		$httpBackend = _$httpBackend_;
 		$rootScope = _$rootScope_;
+		config = _config_;
 
 		expectedPosts = [
 		    {
@@ -72,6 +74,8 @@ describe("ServiceTest", function() {
 		$httpBackend
 			.expectGET(/themes/)
 			.respond();
+
+		config.indexPage = '';
 
 	}));
 

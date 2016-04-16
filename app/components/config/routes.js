@@ -6,7 +6,7 @@ function routesConfig($routeProvider, $locationProvider, config) {
 
     .when('/', {
         templateUrl : function(urlattr){
-            if(config.indexPage){
+            if(config.indexPage !== '' && config.indexPage !== undefined){
                 return 'content/pages/static_pages/'  + config.indexPage;
             }else{
                 return 'app/themes/' + config.theme + '/posts/list.html';
@@ -22,7 +22,7 @@ function routesConfig($routeProvider, $locationProvider, config) {
         controller  : 'PostViewController'
     })
 
-    .when('/category/:category/', {
+    .when('/category/:category', {
         templateUrl : function(urlattr){
             return 'app/themes/' + config.theme + '/posts/byCategory.html';
         },
@@ -38,7 +38,6 @@ function routesConfig($routeProvider, $locationProvider, config) {
 
     .when('/page/:id/:title', {
         templateUrl : function(urlattr){
-            console.log(urlattr);
             return 'app/themes/' + config.theme + '/pages/view.html';
         },
         controller  : 'PageViewController',

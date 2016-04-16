@@ -1,5 +1,5 @@
 
-describe("PageServiceTest", function() {
+describe("[Page Service]", function() {
 	var pageService,
 		$httpBackend,
 		expectedPages;
@@ -74,8 +74,6 @@ describe("PageServiceTest", function() {
 		    };
 
 		pageService.getById('1',function(page){
-			console.log(page);
-			console.log(expectedPage);
 	        expect(expectedPage).toEqual(page);
 			done();
 	    });

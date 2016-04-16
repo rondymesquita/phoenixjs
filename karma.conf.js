@@ -29,7 +29,7 @@ module.exports = function(config) {
     	'./test/app.test.js', //add test module
     	'./app/components/**/*.js',
         'test/spec/*.config.js',
-        'test/spec/*.spec.js'
+        'test/spec/**/*.spec.js'
     ],
 
 
