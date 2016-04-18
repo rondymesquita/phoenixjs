@@ -1,6 +1,6 @@
-phoenix.service('CategoryService', ['$http', 'config', categoryService]);
+phoenix.service('CategoryService', ['$http', 'config', '$q', categoryService]);
 
-function categoryService($http, config) {
+function categoryService($http, config, $q) {
 
     var postsLocation = 'content/posts/posts.json';
     var phoenixFunctions = new PhoenixFunctions();
@@ -8,7 +8,9 @@ function categoryService($http, config) {
     /*
      * List categories from all posts
      */
-    this.list = function(callback){
+    this.list = function(){
+
+        var deferred = $q.defer();
 
         $http({
             method:'GET',
@@ -16,9 +18,10 @@ function categoryService($http, config) {
             cache: true
         }).success(function (posts){
             var categories = phoenixFunctions.getCategories(posts);
-            callback(categories);
+            deferred.resolve(categories);
         });
 
+        return deferred.promise;
     };
 
 }

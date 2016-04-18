@@ -86,7 +86,7 @@ describe("ServiceTest", function() {
 
     it("Should do a get request to posts.json", function(done) {
 
-		service.get('content/posts/posts.json',function(posts){
+		service.get('content/posts/posts.json').then(function(posts){
 	        expect(expectedPosts).toEqual(posts);
 			done();
 	    });

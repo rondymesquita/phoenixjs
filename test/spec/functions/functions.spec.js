@@ -31,7 +31,6 @@ describe("FunctionsTest", function() {
 		var expectedSlug = "atencao-esse-post-e-importante"
 		var slug = phoenixFunctions.generateFriendlyUrlToPost(post).slug;
 		expect(expectedSlug).toEqual(slug);
-
     });
 
 	it("Should generate friendly url based on post title with pontuation at start and end", function() {

@@ -1,8 +1,6 @@
-
-describe("[Page Service]", function() {
+describe("PageServiceTest", function() {
 	var pageService,
-		$httpBackend,
-		expectedPages;
+		$httpBackend;
 
 	beforeEach(function(){
 		module('PhoenixJS');
@@ -14,41 +12,9 @@ describe("[Page Service]", function() {
 		$httpBackend = _$httpBackend_;
 		$rootScope = _$rootScope_;
 
-		expectedPages = [
-		    {
-		        "id": "1",
-		        "title": "About",
-		        "author":"Rondy Mesquita",
-		        "date":"January 28, 2015",
-		        "type":"md"
-		    },
-		    {
-		        "id": "2",
-		        "title": "The PhoenixJS",
-		        "author":"Rondy Mesquita",
-		        "date":"January 28, 2015",
-		        "type":"md"
-		    },
-		    {
-		        "id": "3",
-		        "title": "The theme",
-		        "author":"Rondy Mesquita",
-		        "date":"January 28, 2015",
-		        "type":"md"
-		    },
-		    {
-		        "id": "4",
-		        "title": "Contact",
-		        "author":"Rondy Mesquita",
-		        "date":"January 28, 2015",
-		        "type":"md"
-		    }
-
-		];
-
 		$httpBackend
 			.expectGET('content/pages/pages.json')
-			.respond(expectedPages);
+			.respond(pages);
 
 		$httpBackend
 			.expectGET(/themes/)
@@ -56,24 +22,20 @@ describe("[Page Service]", function() {
 
 	}));
 
-	afterEach(function(){
-		// $httpBackend.verifyNoOutstandingExpectation();
-		// $httpBackend.verifyNoOutstandingRequest();
-	});
-
-    it("Should list get a page by id", function(done) {
+    it("Should get a page by id", function(done) {
 
 		expectedPage ={
-		        "id": "1",
-		        "title": "About",
-				"slug":"about",
-				"url":"#page/1/about",
-		        "author":"Rondy Mesquita",
-		        "date":"January 28, 2015",
-		        "type":"md"
-		    };
+	        "id": "1",
+	        "title": "About",
+			"slug":"about",
+			"url":"#page/1/about",
+	        "author":"Rondy Mesquita",
+	        "date":"January 28, 2015",
+	        "type":"md"
+	    };
 
-		pageService.getById('1',function(page){
+		// console.log(pageService.getById().then());
+		pageService.getById('1').then(function(page){
 	        expect(expectedPage).toEqual(page);
 			done();
 	    });

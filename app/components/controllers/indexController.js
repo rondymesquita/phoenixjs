@@ -4,23 +4,21 @@ phoenix.controller('IndexController', ['$scope', '$rootScope','$routeParams', '$
 function indexController ($scope, $rootScope, $routeParams, $location, config, constants, categoryService, postService, service) {
 
     $scope.location = $location;
-
     $scope.constants = constants;
-
     $scope.theme = config.theme;
     $scope.pagItemsPerPage = config.pagItemsPerPage;
 
-    categoryService.list(function(categories){
+    categoryService.list().then(function(categories){
         $scope.categories = categories;
     });
 
-
-    service.get('content/menus/menu.json',function(data){
-        $scope.menuLinks = data;
+    service.get('content/menus/menu.json').then(function(data){
+        $scope.menu = data;
     });
 
     $scope.isActive = function(item) {
-      if (item.url == "#"+$location.path()) {
+        // console.log($location.path());
+      if (item.url == "#" + $location.path()) {
         return true;
       }
       return false;
@@ -30,12 +28,13 @@ function indexController ($scope, $rootScope, $routeParams, $location, config, c
         $location.path("/search/"+search);
     };
 
+    /* istanbul ignore next: custom for theme */
     $scope.pageChangeHandler = function(num) {
       window.scrollTo(0, 0);
     };
 
     /* istanbul ignore next: custom for theme */
-    service.get('content/social.json',function(data){
+    service.get('content/social.json').then(function(data){
         $scope.social = data;
     });
 

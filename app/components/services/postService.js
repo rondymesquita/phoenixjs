@@ -1,26 +1,30 @@
-phoenix.service('PostService', ['$http', 'config', postService]);
+phoenix.service('PostService', ['$http', 'config', '$q', postService]);
 
-function postService($http, config) {
+function postService($http, config, $q) {
 
     var postsLocation = 'content/posts/posts.json';
     var phoenixFunctions = new PhoenixFunctions();
 
-    this.list = function(callback){
+    this.list = function(){
+
+        var deferred = $q.defer();
 
         $http({
             method:'GET',
             url: postsLocation,
             cache: true
         }).success(function (data){
-
             var posts = phoenixFunctions.getPosts(data);
-            callback(posts);
-
+            deferred.resolve(posts);
         });
+
+        return deferred.promise;
 
     };
 
-    this.listByCategory = function(category, callback){
+    this.listByCategory = function(category){
+
+        var deferred = $q.defer();
 
         $http({
             method:'GET',
@@ -28,12 +32,15 @@ function postService($http, config) {
             cache: true
             }).success(function (data){
                 var posts = phoenixFunctions.getPostsByCategory(data, category);
-                callback(posts);
+                deferred.resolve(posts);
             });
 
+        return deferred.promise;
     };
 
-    this.getById = function(id, callback){
+    this.getById = function(id){
+
+        var deferred = $q.defer();
 
         $http({
             method:'GET',
@@ -41,12 +48,15 @@ function postService($http, config) {
             cache: true
         }).success(function (data){
             var post = phoenixFunctions.getPostById(data, id);
-            callback(post);
+            deferred.resolve(post);
         });
 
+        return deferred.promise;
     };
 
-    this.getBySearch = function(search, callback){
+    this.getBySearch = function(search){
+
+        var deferred = $q.defer();
 
         var request = $http({
             method:'GET',
@@ -54,13 +64,9 @@ function postService($http, config) {
             cache: true,
         }).success(function(data){
             var posts = phoenixFunctions.getPostsBySearch(data, search);
-            callback(posts);
-
+            deferred.resolve(posts);
         });
 
+        return deferred.promise;
     };
-
-
-
-
 }
