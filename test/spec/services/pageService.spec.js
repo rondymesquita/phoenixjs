@@ -1,6 +1,7 @@
 describe("PageServiceTest", function() {
 	var pageService,
-		$httpBackend;
+		$httpBackend,
+		$rootScope;
 
 	beforeEach(function(){
 		module('PhoenixJS');
@@ -24,7 +25,7 @@ describe("PageServiceTest", function() {
 
     it("Should get a page by id", function(done) {
 
-		expectedPage ={
+		var expectedPage ={
 	        "id": "1",
 	        "title": "About",
 			"slug":"about",
@@ -34,8 +35,7 @@ describe("PageServiceTest", function() {
 	        "type":"md"
 	    };
 
-		// console.log(pageService.getById().then());
-		pageService.getById('1').then(function(page){
+		pageService.getById(1).then(function(page){
 	        expect(expectedPage).toEqual(page);
 			done();
 	    });

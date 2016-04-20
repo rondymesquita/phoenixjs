@@ -25,12 +25,11 @@ function service($http, $q) {
             method:'GET',
             url: url,
             cache: true
-        }).success(function (data, status){
-            deferred.resolve(data, status);
-        }).error(function(data, status){
-            deferred.reject(data, status);
+        }).then(function (response){
+            deferred.resolve(response.data);
+        },function(){;
+            deferred.reject();
         });
-
         return deferred.promise;
     };
 }

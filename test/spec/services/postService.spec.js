@@ -1,7 +1,8 @@
 
 describe("PostServiceTest", function() {
 	var postService,
-		$httpBackend;
+		$httpBackend,
+		$rootScope;
 
 	beforeEach(function(){
 		module('PhoenixJS');
@@ -39,7 +40,7 @@ describe("PostServiceTest", function() {
 
     });
 
-	it("Should list all posts by category", function(done) {
+	it("Should list posts by given category", function(done) {
 
 		var expectedPostsFromCategory = [{
 	        "id": "3",
@@ -68,7 +69,7 @@ describe("PostServiceTest", function() {
 
     });
 
-	it("Should list all posts by another category", function(done) {
+	it("Should list posts by given category (2)", function(done) {
 
 		var expectedPostsFromCategory = [{
 	        "id": "1",
@@ -86,8 +87,7 @@ describe("PostServiceTest", function() {
 	        "author":"Rondy Mesquita",
 	        "date":"January 28, 2015",
 	        "type":"md"
-	    }
-	    ,
+	    },
 	    {
 	        "id": "2",
 	        "title": "A New Hope",
@@ -192,7 +192,7 @@ describe("PostServiceTest", function() {
 		    }
 		];
 
-		postService.getBySearch('Empire').then(function(resultSearch){
+		postService.listBySearch('Empire').then(function(resultSearch){
 	        expect(expectedResultSearch).toEqual(resultSearch);
 			done();
 	    });
@@ -218,8 +218,7 @@ describe("PostServiceTest", function() {
 	        "author":"Rondy Mesquita",
 	        "date":"January 28, 2015",
 	        "type":"md"
-	    }
-	    ,
+	    },
 	    {
 	        "id": "2",
 	        "title": "A New Hope",
@@ -238,7 +237,7 @@ describe("PostServiceTest", function() {
 	        "type":"md"
 	    }];
 
-		postService.getBySearch('movies').then(function(resultSearch){
+		postService.listBySearch('movies').then(function(resultSearch){
 	        expect(expectedResultSearch).toEqual(resultSearch);
 			done();
 	    });

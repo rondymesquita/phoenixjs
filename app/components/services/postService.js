@@ -54,7 +54,7 @@ function postService($http, config, $q) {
         return deferred.promise;
     };
 
-    this.getBySearch = function(search){
+    this.listBySearch = function(search){
 
         var deferred = $q.defer();
 

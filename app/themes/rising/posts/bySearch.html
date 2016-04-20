@@ -5,14 +5,14 @@
 
     <div class="row sub-header">
         <div class="col-xs-12">
-            <h2 ng-show="posts.length > 0">{{constants.searchResultTitle}} {{search}}</h2>
-            <h2 ng-show="posts.length == 0">{{constants.searchEmptyResultTitle}} {{search}}</h2>
+            <h2 ng-show="posts.length > 0">{{constants.searchResultTitle}} {{searchString}}</h2>
+            <h2 ng-show="posts.length == 0">{{constants.searchEmptyResultTitle}} {{searchString}}</h2>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-8">
-            <section dir-paginate="post in posts | itemsPerPage: pagItemsPerPage"  class="post-content">
+            <section dir-paginate="post in posts | itemsPerPage: pagItemsPerPage" class="post-content">
                 <article class="row">
                     <div class="col-md-12">
 

@@ -5,11 +5,11 @@ function pageViewController($scope, $rootScope, $http, $routeParams, pageService
 
     $scope.page = [];
     $scope.routeParams = $routeParams;
-    
+
     pageService.getById($scope.routeParams.id).then(function(page){
             $scope.page = page;
             $rootScope.page = page;
-            service.get('content/pages/' + $scope.routeParams.id + '.' + page.type).then(function(data, status){
+            service.get('content/pages/' + $scope.routeParams.id + '.' + page.type).then(function(data){
               $scope.page.content = data;
           });
     });

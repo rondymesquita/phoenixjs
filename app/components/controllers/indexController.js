@@ -25,7 +25,9 @@ function indexController ($scope, $rootScope, $routeParams, $location, config, c
     };
 
     $scope.searchPosts = function(search){
-        $location.path("/search/"+search);
+        if(search && search.trim()){
+            $location.path("/search/" + search);
+        }
     };
 
     /* istanbul ignore next: custom for theme */

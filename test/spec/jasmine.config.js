@@ -1,4 +1,4 @@
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 2 * 10;
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 2 * 100;
 
 //create a console.log reporter
 // var MyReporter = function(){jasmineRequire.JsApiReporter.apply(this,arguments);};

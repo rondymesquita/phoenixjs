@@ -12,11 +12,12 @@ function pageService($http, config, $q) {
             method:'GET',
             url: pagesLocation,
             cache: true
-        }).success(function (pages){
-            var page = phoenixFunctions.getPageById(pages, id);
+        }).then(function(response){
+            var page = phoenixFunctions.getPageById(response.data, id);
             deferred.resolve(page);
+        },function(){
+            deferred.reject();
         });
-
         return deferred.promise;
     };
 

@@ -141,7 +141,7 @@ PhoenixFunctions.prototype = {
 
                 if(tempCategories.indexOf(post.categories[i]) === -1){
                     tempCategories = tempCategories.concat(post.categories[i]);
-                    categories.push(category)
+                    categories.push(category);
                 }
             }
         });
@@ -174,4 +174,4 @@ PhoenixFunctions.prototype = {
      return this.generateFriendlyUrlToPage(pages[id-1]);
   }
 
-}
+};

@@ -3,6 +3,7 @@ describe("ServiceTest", function() {
 	var service,
 		$httpBackend,
 		expectedPosts,
+		$rootScope,
 		config;
 
 	beforeEach(function(){

@@ -125,9 +125,31 @@ describe("IndexControllerSpec", function() {
 	it('Should change location path (redirection) when do a search',function(){
 		$scope.searchPosts('search sample')
 		expect($location.path()).toEqual('/search/search sample');
+	});
 
+	it('Should change location path (redirection) when do a search (2)',function(){
 		$scope.searchPosts('another search')
 		expect($location.path()).toEqual('/search/another search');
+	});
+
+	it('Should not change location path (redirection) when search is empty',function(){
+		$scope.searchPosts('')
+		expect($location.path()).toEqual('');
+	});
+
+	it('Should not change location path (redirection) when search is string with spaces',function(){
+		$scope.searchPosts('    ')
+		expect($location.path()).toEqual('');
+	});
+
+	it('Should not change location path (redirection) when search is string with spaces',function(){
+		$scope.searchPosts(undefined)
+		expect($location.path()).toEqual('');
+	});
+
+	it('Should not change location path (redirection) when search is null',function(){
+		$scope.searchPosts(null)
+		expect($location.path()).toEqual('');
 	});
 
 });

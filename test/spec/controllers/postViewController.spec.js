@@ -61,9 +61,7 @@ describe("PostViewControllerTest", function() {
 	}));
 
     it("Should open post by its id", function() {
-		// console.log($scope);
 		$scope.$apply();
-		console.log($scope);
 		expect($scope.post).toEqual(expectedPost);
 		expect($scope.post.content).toEqual(expectedPostContent);
 		expect($scope.$root.post).toEqual(expectedPost);

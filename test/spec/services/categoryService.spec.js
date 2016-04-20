@@ -1,7 +1,8 @@
 
 describe("CategoryServiceTest", function() {
 	var categoryService,
-		$httpBackend;
+		$httpBackend,
+		$rootScope;
 
 	beforeEach(function(){
 		module('PhoenixJS');

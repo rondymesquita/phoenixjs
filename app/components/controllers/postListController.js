@@ -1,11 +1,9 @@
 
-phoenix.controller('PostListController', ['$scope', '$rootScope', '$http', '$routeParams','PostService', postListController]);
+phoenix.controller('PostListController', ['$scope', '$rootScope', 'PostService', postListController]);
 
-function postListController($scope, $rootScope, $http, $routeParams, postService) {
+function postListController($scope, $rootScope, postService) {
 
-    $scope.title = "Posts";
     $scope.post = [];
-    $scope.routeParams = $routeParams;
 
     postService.list().then(function(posts){
         $scope.posts = posts;
