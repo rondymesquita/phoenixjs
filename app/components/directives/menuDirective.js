@@ -4,10 +4,14 @@ function menuDirective(config,$sce){
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: 'app/themes/'+config.theme+'/menus/menu.html',
+        scope: true,
+        templateUrl: 'app/themes/'+config.theme+'/menu/menu.html',
         compile: function(element, attrs){
             return function(scope, element, attrs){
-                scope.menuBody = "app/themes/"+config.theme+"/menus/"+ attrs.menuBody;
+                if (!attrs.body) {
+                    attrs.body = 'menu-default.html';
+                }
+                scope.body = "app/themes/"+config.theme+"/menu/"+ attrs.body;
             };
         }
     };

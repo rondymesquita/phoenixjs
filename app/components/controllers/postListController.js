@@ -3,7 +3,7 @@ phoenix.controller('PostListController', ['$scope', '$rootScope', 'PostService',
 
 function postListController($scope, $rootScope, postService) {
 
-    $scope.post = [];
+    $scope.posts = [];
 
     postService.list().then(function(posts){
         $scope.posts = posts;

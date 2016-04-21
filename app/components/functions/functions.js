@@ -5,7 +5,7 @@ PhoenixFunctions.prototype = {
     /*
      * Remove acentuation
      */
-    encodeString: function(s){
+    sanitize: function(s){
         var r = s.toString().toLowerCase();
         non_asciis = [
             {value: 'a',regExp: '[àáâãäå]'},
@@ -33,7 +33,7 @@ PhoenixFunctions.prototype = {
      * Generate a friendly url to post based on title
      */
     generateFriendlyUrlToPost: function(publication){
-        publication.slug = this.encodeString(publication.title);
+        publication.slug = this.sanitize(publication.title);
         publication.url = "#/post/" + publication.id + "/" + publication.slug;
         return publication;
     },
@@ -42,7 +42,7 @@ PhoenixFunctions.prototype = {
      * Generate a friendly url to post based on title
      */
     generateFriendlyUrlToPage: function(publication){
-        publication.slug = this.encodeString(publication.title);
+        publication.slug = this.sanitize(publication.title);
         publication.url = "#/page/" + publication.id + "/" + publication.slug;
         return publication;
     },
@@ -86,7 +86,7 @@ PhoenixFunctions.prototype = {
    */
   getPostsBySearch: function(posts, search){
 
-      search = this.encodeString(search);
+      search = this.sanitize(search);
       var result = [],
           self = this;
 
@@ -95,7 +95,7 @@ PhoenixFunctions.prototype = {
 
           var value;
           for(var attr in post){
-              value = self.encodeString(post[attr]);
+              value = self.sanitize(post[attr]);
 
               if(value.indexOf(search) != -1){
                   insertThisPost = true;
