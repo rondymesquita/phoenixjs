@@ -27,9 +27,8 @@ function service($http, $q) {
             cache: true
         }).then(function (response){
             deferred.resolve(response.data);
-        },function(){;
-            deferred.reject();
         });
+
         return deferred.promise;
     };
 }

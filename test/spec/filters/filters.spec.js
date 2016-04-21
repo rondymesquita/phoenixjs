@@ -51,8 +51,7 @@ describe("FiltersTest", function() {
 	        "author":"Rondy Mesquita",
 	        "date":"January 28, 2015",
 	        "type":"md"
-	    }
-	    ,
+	    },
 	    {
 	        "id": "2",
 	        "title": "A New Hope",

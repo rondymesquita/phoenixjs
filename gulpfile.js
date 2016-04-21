@@ -35,7 +35,7 @@ var libraries = [
 ];
 
 
-var phoenixTest = [
+var phoenixJsTest = [
 	'!./app/components/app.js', //exclude default module
 	'./test/app.test.js', //add test module
 	'./app/components/**/*.js',
@@ -56,16 +56,20 @@ var librariesTest = [
 	'./bower_components/angular-utils-pagination/dirPagination.js'
 ];
 
+var phoenixJsSpecs = [
+	'./test/spec/**/*.spec.js'
+]
+
 var contentJs = [
 	'./content/menus/menu.json'
 ];
 
-gulp.task('clean', function () {
+gulp.task('clean',['clean-temp-files'] ,function () {
 	return gulp.src('dist', {read: false})
 		.pipe(clean());
 });
 
-gulp.task('cleanTempFiles', [],function () {
+gulp.task('clean-temp-files', [],function () {
 	gulp
 		.src('dist/libraries.js', {read: false})
 		.pipe(clean());
@@ -75,6 +79,11 @@ gulp.task('lint', function() {
 
 	gulp
 		.src(phoenixJs)
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'));
+
+	gulp
+		.src(phoenixJsSpecs)
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'));
 
@@ -109,9 +118,9 @@ gulp.task('js', function() {
 		For Testing
 		Libraries with Angular Mock, Jquery, Jasmine
 	*/
-
+	/*
 	gulp
-		.src(phoenixTest)
+		.src(phoenixJsTest)
 		.pipe(concat('phoenix.test.js'))
 		.pipe(gulp.dest(OUTPUT));
 
@@ -119,6 +128,7 @@ gulp.task('js', function() {
 		.src(librariesTest)
 		.pipe(concat('libraries.test.js'))
 		.pipe(gulp.dest(OUTPUT));
+	*/
 
 });
 

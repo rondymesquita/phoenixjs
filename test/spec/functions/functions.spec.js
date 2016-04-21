@@ -21,21 +21,21 @@ describe("FunctionsTest", function() {
 
 	it("Should generate friendly url based on post title", function() {
         var post = {title: 'A simple post title'};
-		var expectedSlug = "a-simple-post-title"
+		var expectedSlug = "a-simple-post-title";
 		var slug = phoenixFunctions.generateFriendlyUrlToPost(post).slug;
 		expect(expectedSlug).toEqual(slug);
     });
 
 	it("Should generate friendly url based on post title with accentuation and pontuation", function() {
         var post = {title: 'Atenção, Esse Post é Importante'};
-		var expectedSlug = "atencao-esse-post-e-importante"
+		var expectedSlug = "atencao-esse-post-e-importante";
 		var slug = phoenixFunctions.generateFriendlyUrlToPost(post).slug;
 		expect(expectedSlug).toEqual(slug);
     });
 
 	it("Should generate friendly url based on post title with pontuation at start and end", function() {
         var post = {title: '!?Atenção, Esse Post é Importante!?'};
-		var expectedSlug = "atencao-esse-post-e-importante"
+		var expectedSlug = "atencao-esse-post-e-importante";
 		var slug = phoenixFunctions.generateFriendlyUrlToPost(post).slug;
 		expect(expectedSlug).toEqual(slug);
     });
