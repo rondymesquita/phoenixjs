@@ -12,7 +12,7 @@ describe("PostViewControllerTest", function() {
 	        "id": "1",
 	        "title": "The Empire Strikes Back",
 	        "slug":"the-empire-strikes-back",
-			"url":"#post/1/the-empire-strikes-back",
+			"url":"#/post/1/the-empire-strikes-back",
 	        "excerpt": "Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force. Remember, a Jedi can feel the Force flowing through him. Look, I ain't in this for your revolution, and I'm not in it for you, Princess. I expect to be well paid.",
 	        "image":"content/posts/images/starwars_the_empire_strikes_back.jpg",
 	        "categories": [

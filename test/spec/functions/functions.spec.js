@@ -5,18 +5,18 @@ describe("FunctionsTest", function() {
      });
 
     it("Should encode string", function() {
-        expect(phoenixFunctions.encodeString("àáâãäå")).toEqual("aaaaaa");
-		expect(phoenixFunctions.encodeString("æ")).toEqual("ae");
-		expect(phoenixFunctions.encodeString("ç")).toEqual("c");
-		expect(phoenixFunctions.encodeString("èéêë")).toEqual("eeee");
-		expect(phoenixFunctions.encodeString("ìíîï")).toEqual("iiii");
-		expect(phoenixFunctions.encodeString("ñ")).toEqual("n");
-		expect(phoenixFunctions.encodeString("òóôõö")).toEqual("ooooo");
-		expect(phoenixFunctions.encodeString("œ")).toEqual("oe");
-		expect(phoenixFunctions.encodeString("ùúûűü")).toEqual("uuuuu");
-		expect(phoenixFunctions.encodeString("ýÿ")).toEqual("yy");
-		expect(phoenixFunctions.encodeString("atenção")).toEqual("atencao");
-		expect(phoenixFunctions.encodeString("áéíóú")).toEqual("aeiou");
+        expect(phoenixFunctions.sanitize("àáâãäå")).toEqual("aaaaaa");
+		expect(phoenixFunctions.sanitize("æ")).toEqual("ae");
+		expect(phoenixFunctions.sanitize("ç")).toEqual("c");
+		expect(phoenixFunctions.sanitize("èéêë")).toEqual("eeee");
+		expect(phoenixFunctions.sanitize("ìíîï")).toEqual("iiii");
+		expect(phoenixFunctions.sanitize("ñ")).toEqual("n");
+		expect(phoenixFunctions.sanitize("òóôõö")).toEqual("ooooo");
+		expect(phoenixFunctions.sanitize("œ")).toEqual("oe");
+		expect(phoenixFunctions.sanitize("ùúûűü")).toEqual("uuuuu");
+		expect(phoenixFunctions.sanitize("ýÿ")).toEqual("yy");
+		expect(phoenixFunctions.sanitize("atenção")).toEqual("atencao");
+		expect(phoenixFunctions.sanitize("áéíóú")).toEqual("aeiou");
     });
 
 	it("Should generate friendly url based on post title", function() {

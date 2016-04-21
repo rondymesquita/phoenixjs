@@ -29,7 +29,7 @@ describe("PageServiceTest", function() {
 	        "id": "1",
 	        "title": "About",
 			"slug":"about",
-			"url":"#page/1/about",
+			"url":"#/page/1/about",
 	        "author":"Rondy Mesquita",
 	        "date":"January 28, 2015",
 	        "type":"md"

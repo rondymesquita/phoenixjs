@@ -40,7 +40,7 @@ describe("PostSearchControllerTest", function() {
 		        "id": "1",
 		        "title": "The Empire Strikes Back",
 		        "slug":"the-empire-strikes-back",
-				"url":"#post/1/the-empire-strikes-back",
+				"url":"#/post/1/the-empire-strikes-back",
 		        "excerpt": "Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force. Remember, a Jedi can feel the Force flowing through him. Look, I ain't in this for your revolution, and I'm not in it for you, Princess. I expect to be well paid.",
 		        "image":"content/posts/images/starwars_the_empire_strikes_back.jpg",
 		        "categories": [
@@ -79,7 +79,7 @@ describe("PostSearchControllerTest", function() {
 	        "id": "1",
 	        "title": "The Empire Strikes Back",
 	        "slug":"the-empire-strikes-back",
-			"url":"#post/1/the-empire-strikes-back",
+			"url":"#/post/1/the-empire-strikes-back",
 	        "excerpt": "Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force. Remember, a Jedi can feel the Force flowing through him. Look, I ain't in this for your revolution, and I'm not in it for you, Princess. I expect to be well paid.",
 	        "image":"content/posts/images/starwars_the_empire_strikes_back.jpg",
 	        "categories": [
@@ -96,7 +96,7 @@ describe("PostSearchControllerTest", function() {
 	        "id": "2",
 	        "title": "A New Hope",
 	        "slug":"a-new-hope",
-			"url":"#post/2/a-new-hope",
+			"url":"#/post/2/a-new-hope",
 	        "excerpt": "Look, I ain't in this for your revolution, and I'm not in it for you, Princess. I expect to be well paid. I'm in it for the money. I care. So, what do you think of her, Han? He is here. What?! I find your lack of faith disturbing. You are a part of the Rebel Alliance and a traitor! Take her away!",
 	        "image":"content/posts/images/starwars_a_new_hope.jpg",
 	        "categories": [
