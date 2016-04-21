@@ -13,7 +13,7 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 2 * 100;
 // var env = jasmine.getEnv();
 // env.addReporter(new MyReporter());
 
-var categories = [{title: "star-wars", url: "#category/star-wars"}, {title: "the-empire-strikes-back", url: "#category/the-empire-strikes-back"}, {title: "movies", url: "#category/movies"}, {title: "a-new-hope", url: "#category/a-new-hope"}, {title: "the-clone-wars", url: "#category/the-clone-wars"}, {title: "animation", url: "#category/animation"}];
+var categories = [{title: "star-wars", url: "#/category/star-wars"}, {title: "the-empire-strikes-back", url: "#/category/the-empire-strikes-back"}, {title: "movies", url: "#/category/movies"}, {title: "a-new-hope", url: "#/category/a-new-hope"}, {title: "the-clone-wars", url: "#/category/the-clone-wars"}, {title: "animation", url: "#/category/animation"}];
 
 var menu = [{"title":"Home","url":"#/"},{"title":"About","url":"#/page/1/about"}];
 

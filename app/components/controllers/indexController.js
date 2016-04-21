@@ -17,7 +17,8 @@ function indexController ($scope, $rootScope, $routeParams, $location, config, c
     });
 
     $scope.isActive = function(item) {
-        // console.log($location.path());
+        // console.log("#" + $location.path());
+        // console.log(item.url);
       if (item.url == "#" + $location.path()) {
         return true;
       }

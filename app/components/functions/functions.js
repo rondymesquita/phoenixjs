@@ -34,7 +34,7 @@ PhoenixFunctions.prototype = {
      */
     generateFriendlyUrlToPost: function(publication){
         publication.slug = this.encodeString(publication.title);
-        publication.url = "#post/" + publication.id + "/" + publication.slug;
+        publication.url = "#/post/" + publication.id + "/" + publication.slug;
         return publication;
     },
 
@@ -43,7 +43,7 @@ PhoenixFunctions.prototype = {
      */
     generateFriendlyUrlToPage: function(publication){
         publication.slug = this.encodeString(publication.title);
-        publication.url = "#page/" + publication.id + "/" + publication.slug;
+        publication.url = "#/page/" + publication.id + "/" + publication.slug;
         return publication;
     },
 
@@ -136,7 +136,7 @@ PhoenixFunctions.prototype = {
 
                 var category = {
                     title: post.categories[i],
-                    url: "#category/" + post.categories[i]
+                    url: "#/category/" + post.categories[i]
                 };
 
                 if(tempCategories.indexOf(post.categories[i]) === -1){

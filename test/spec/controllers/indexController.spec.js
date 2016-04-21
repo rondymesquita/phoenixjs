@@ -6,6 +6,7 @@ describe("IndexControllerSpec", function() {
 		categoryService,
 		service,
 		deferredService,
+		deferredCategoryService,
 		$httpBackend,
 		$rootScope,
 		$scope,
@@ -39,12 +40,11 @@ describe("IndexControllerSpec", function() {
 		});
 
 		$scope = $rootScope.$new();
-		indexController = controller('IndexController',{
+		controller('IndexController',{
 			$scope: $scope,
 			postService: postService,
 			categoryService: categoryService,
 			service: service
-			// ,$location: $location
 		});
 
 		$httpBackend
