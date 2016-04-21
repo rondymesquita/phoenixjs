@@ -171,6 +171,10 @@ gulp.task('copy', function() {
 		.pipe(gulp.dest(OUTPUT));
 
 	gulp
+		.src('src/styles-custom.css')
+		.pipe(gulp.dest(OUTPUT));
+
+	gulp
 		.src('content/**')
 		.pipe(gulp.dest(OUTPUT + '/content'));
 
@@ -180,14 +184,7 @@ gulp.task('copy', function() {
 });
 
 
-gulp.task('build', ['lint','copy','js','css'],function() {
-
-	//gulp.run('lint', 'copy', 'js'); //deprecated
-
-	// gulp.watch([files,libs], function(evt) {
-	// 	gulp.run('copy', 'js', 'js-libs'); //deprecated
-	// });
-});
+gulp.task('build', ['lint','copy','js','css']);
 
 gulp.task('hello', function() {
   console.log("Hello!!!");
@@ -200,9 +197,9 @@ gulp.doneCallback = function(){
 /* Functions */
 function getThemeNameFromConfig(){
 	var content = fs.readFileSync('./app/components/config/config.js','utf8');
-	content = content.replace(/(\/\*.*\*\/)/g,''); // removing comments
-	content = content.replace(/'/g, '"');
-	var regex = new RegExp(/(\{[\s\S]*\})/);//capturing all between brackets
+	content = content.replace(/(\/\*.*\*\/|\/\/.*$)/gm,''); // removing comments between "/* */"  and lines with "//"
+	content = content.replace(/'/g, '"'); // replace single quote to double quote
+	var regex = new RegExp(/(\{[\s\S]*\})/); //capturing all between brackets
 	var configString = regex.exec(content)[1];
 	var config = JSON.parse(configString);
 	return config.theme;
