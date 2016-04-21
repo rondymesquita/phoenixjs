@@ -11,7 +11,7 @@ var PhoenixPage = function(browser){
 
 	PhoenixPage.prototype.open =  function(){
 		browser.get(this.url);
-	}
-}
+	};
+};
 
 module.exports = PhoenixPage;
