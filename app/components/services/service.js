@@ -2,21 +2,6 @@ phoenix.service('Service', ['$http', '$q', service]);
 
 function service($http, $q) {
 
-    // this.get = function(url, success, error){
-    //
-    //     $http({
-    //         method:'GET',
-    //         url: url,
-    //         cache: true
-    //     }).success(function (data, status){
-    //         success(data, status);
-    //     }).error(function(data, status){
-    //         if(error){
-    //             error(data, status);
-    //         }
-    //     });
-    // };
-
     this.get = function(url){
 
         var deferred = $q.defer();
@@ -32,3 +17,6 @@ function service($http, $q) {
         return deferred.promise;
     };
 }
+
+// service.$inject = ['$http','$q'];
+// phoenix.service('Service',service);
