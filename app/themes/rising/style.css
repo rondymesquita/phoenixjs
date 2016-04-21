@@ -99,7 +99,7 @@ a.list-group-item-custom:hover{
     margin-top:24px;
 }
 input[type=search]{
-    border-radius:0px;
+    border-radius: 0;
 
 }
 input[type=search]:focus{

@@ -1,5 +1,4 @@
 [
-	"bootstrap/dist/css/bootstrap.css",
-	"style.css",
-	"style-custom.css"
+	"bootstrap.css",
+	"style.css"
 ]

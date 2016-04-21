@@ -180,7 +180,7 @@ gulp.task('copy', function() {
 });
 
 
-gulp.task('default', ['lint','copy','js','css'],function() {
+gulp.task('build', ['lint','copy','js','css'],function() {
 
 	//gulp.run('lint', 'copy', 'js'); //deprecated
 
@@ -195,7 +195,7 @@ gulp.task('hello', function() {
 
 gulp.doneCallback = function(){
 
-}
+};
 
 /* Functions */
 function getThemeNameFromConfig(){
@@ -204,7 +204,7 @@ function getThemeNameFromConfig(){
 	content = content.replace(/'/g, '"');
 	var regex = new RegExp(/(\{[\s\S]*\})/);//capturing all between brackets
 	var configString = regex.exec(content)[1];
-	var config = JSON.parse(configString)
+	var config = JSON.parse(configString);
 	return config.theme;
 }
 
