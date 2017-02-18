@@ -3,17 +3,8 @@ var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
-var minify = require('gulp-minify');
 var clean = require('gulp-clean');
-var strip = require('gulp-strip-comments');
-var minifyjs = require('gulp-js-minify');
-var packer = require('gulp-packer');
-var streamify = require('gulp-streamify');
 var fs = require('fs');
-var Q = require('q');
-var data = require('gulp-data');
-var runSequence = require('run-sequence');
-var jsonfile = require('jsonfile');
 var cleanCSS = require('gulp-clean-css');
 var purify = require('gulp-purifycss');
 
@@ -33,7 +24,6 @@ var libraries = [
 	'./bower_components/angular-markdown-directive/markdown.js',
 	'./bower_components/angular-utils-pagination/dirPagination.js'
 ];
-
 
 var phoenixJsTest = [
 	'!./app/components/app.js', //exclude default module
@@ -114,22 +104,6 @@ gulp.task('js', function() {
 		.pipe(rename('libraries.min.js'))
 		.pipe(gulp.dest(OUTPUT));
 
-	/*
-		For Testing
-		Libraries with Angular Mock, Jquery, Jasmine
-	*/
-	/*
-	gulp
-		.src(phoenixJsTest)
-		.pipe(concat('phoenix.test.js'))
-		.pipe(gulp.dest(OUTPUT));
-
-	gulp
-		.src(librariesTest)
-		.pipe(concat('libraries.test.js'))
-		.pipe(gulp.dest(OUTPUT));
-	*/
-
 });
 
 gulp.task('css', function() {
@@ -189,10 +163,6 @@ gulp.task('build', ['lint','copy','js','css']);
 gulp.task('hello', function() {
   console.log("Hello!!!");
 });
-
-gulp.doneCallback = function(){
-
-};
 
 /* Functions */
 function getThemeNameFromConfig(){

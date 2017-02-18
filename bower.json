@@ -5,7 +5,7 @@
     "Rondinelli Mesquita <rondinellimesquitas@gmail.com>"
   ],
   "description": "description",
-  "main": "app/app.module.js",
+  "main": "app/components/app.js",
   "license": "MIT",
   "homepage": "index.html",
   "ignore": [
@@ -16,7 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.5.2",
+    "angular": "1.5.11",
     "jquery": "~2.2.2",
     "angular-resource": "~1.5.2",
     "bootstrap": "~3.3.6",

@@ -21,7 +21,6 @@
     "gulp-data": "^1.2.1",
     "gulp-js-minify": "0.0.3",
     "gulp-jshint": "^2.0.0",
-    "gulp-minify": "0.0.7",
     "gulp-ngmin": "^0.3.0",
     "gulp-packer": "^0.1.2",
     "gulp-purifycss": "^0.2.0",
