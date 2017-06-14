@@ -16,7 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.5.11",
+    "angular": "~1.5.11",
     "jquery": "~2.2.2",
     "angular-resource": "~1.5.2",
     "bootstrap": "~3.3.6",
@@ -28,5 +28,8 @@
   "devDependencies": {
     "jasmine": "~2.4.1",
     "angular-mocks": "~1.5.2"
+  },
+  "resolutions": {
+    "angular": "1.5.11"
   }
 }

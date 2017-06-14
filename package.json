@@ -18,23 +18,14 @@
     "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^2.0.4",
     "gulp-concat": "^2.6.0",
-    "gulp-data": "^1.2.1",
-    "gulp-js-minify": "0.0.3",
-    "gulp-jshint": "^2.0.0",
-    "gulp-ngmin": "^0.3.0",
-    "gulp-packer": "^0.1.2",
+    "gulp-jshint": "^2.0.4",
     "gulp-purifycss": "^0.2.0",
     "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.5.4",
-    "gulp-streamify": "^1.0.2",
-    "gulp-strip-comments": "^2.4.2",
     "gulp-uglify": "^1.5.3",
     "jasmine-core": "^2.4.1",
-    "jsonfile": "^2.2.3",
+    "jshint": "^2.9.4",
     "karma": "^0.13.22",
     "karma-coverage": "^0.5.5",
-    "karma-jasmine": "^0.3.8",
-    "q": "^1.4.1",
-    "run-sequence": "^1.1.5"
+    "karma-jasmine": "^0.3.8"
   }
 }
