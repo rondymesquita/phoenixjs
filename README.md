@@ -9,11 +9,11 @@
 - Extend with AngularJS
 - Create your own themes
 
-##Requirements
+## Requirements
 - Bower
 - Dependencies declared in bower.json
 
-##Build
+## Build
  - Install NodeJS
  - Install npm
  - Install Bower
@@ -23,7 +23,7 @@
     bower install
     ```
 
-##Theme sctructure
+## Theme sctructure
 - Put themes in **app/themes** folder following the structure
     - [THEME-NAME]
         - --- **comments** (directive view for comments)
@@ -40,7 +40,7 @@
         - --- **sidebar** (directive for sidebars)
             - --- **sidebar.html** (view for sidebars)
 
-##Structure
+## Structure
 The structure is simple:
 
  - **app**
@@ -62,7 +62,7 @@ You don't need to worry about controllers, directives, filters, functions and se
 Of course, feel free to change any file and customize your experience.
 The **index.html** is the root file where all dependencies are linked. So, you can add any css or js file to your site.
 
-##Content
+## Content
 The content is based on a json file that works like a index for posts meta and markdown and html file for post content. So, you don't need any database.
 
 You create a folder **content** sibling **app** folder like.
@@ -81,7 +81,7 @@ You create a folder **content** sibling **app** folder like.
          - **posts.json** (posts index)
          - **images** (the images folder of posts)
 
-###Posts.json
+### Posts.json
 
 This is an example of **posts.json** file. Is an array with all posts.
 
@@ -114,13 +114,13 @@ This is an example of **posts.json** file. Is an array with all posts.
  - **date**: date
  - **type**: type of your posts. You can choose "**md**" or "**html**"
 
-###Post file
+### Post file
 To your post file, your take the **id** of your post and the **type**: **[id].[type]**
 
  - 1.md
  - 2.html
 
-##Config.js file
+## Config.js file
 The **config.js** is a constant angularjs file where the configuration attributes are declared.
 ```
     theme: 'rising',
@@ -138,7 +138,7 @@ The **config.js** is a constant angularjs file where the configuration attribute
  - **pagItemsPerPage**: how many posts are displayed per page on pagination
  - **indexPage**: the custom index page. You declare the file name to be the index of site. The file must be in **content/pages/static_pages** Otherwise, comment or remove the property and will be used de default view listing the posts.
 
-##Pagination
+## Pagination
 To add pagination support was used the directive **pagination** from
 [https://github.com/michaelbromley/angularUtils](https://github.com/michaelbromley/angularUtils). You can customize the directive reading the doc.
 
